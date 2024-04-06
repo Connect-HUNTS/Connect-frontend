@@ -1,0 +1,149 @@
+.wrapper {
+  width: 890px;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 55px;
+  padding-bottom: 300px;
+
+  z-index: 1;
+}
+
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 88px;
+  letter-spacing: 1px;
+  font-weight: 500;
+
+  font-family: NeueMachina-Regular, serif;
+
+  cursor: default;
+}
+
+.subTitle {
+  width: 830px;
+
+  font-size: 48px;
+  font-weight: 400;
+  font-family: NeueMachina-Regular, serif;
+
+  cursor: default;
+}
+
+.description {
+  font-family: NeueMachina-Ultralight, serif;
+}
+
+.animatedSpan {
+  font-size: 48px;
+  font-weight: 400;
+
+  font-family: NeueMachina-Bold, serif;
+
+  margin-left: 15px;
+
+  cursor: default;
+  color: transparent;
+  position: relative;
+
+}
+
+.animatedSpan::before {
+
+
+  content: attr(data-content);
+  position: absolute;
+
+
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(120deg, #4131FF, #BC88FF);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  animation: slideFromBottom 2s linear forwards;
+
+  animation-delay: 1s;
+
+  text-shadow: 0 0 0.80em;
+
+}
+
+
+@keyframes slideFromBottom {
+  0% {
+    height: 10%;
+
+  }
+  100% {
+    height: 100%;
+
+  }
+}
+
+.description {
+  width: 593px;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: NeueMachina-Regular, serif;
+  text-align: center;
+
+  letter-spacing: 0.7px;
+
+  padding-top: 60px;
+  padding-bottom: 30px;
+
+  cursor: default;
+}
+
+.getStartedBtn {
+  background: linear-gradient(black, black) padding-box,
+  linear-gradient(120deg, #4131FF, #BC88FF) border-box;
+  color: #ffffff;
+  height: 71px;
+  width: 220px;
+  border: 2px solid transparent;
+  border-radius: 15px;
+
+  display: inline-block;
+  position: relative;
+
+  font-weight: 500;
+  font-size: 24px;
+  font-family: NeueMachina-Regular, serif;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+
+  transition: all 2s ease, border-top 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(120deg, #4131FF, #BC88FF) padding-box;
+    border-top: 2px solid transparent;
+    box-shadow: inset 0 0 .5em rgba(143, 204, 255, 0.5), 0 0 5em #45a8fa80;
+    text-shadow: 0 0 0.80em #0178da;
+    color: white;
+
+    opacity: 1;
+
+  }
+}
+
+
+
+
+
+

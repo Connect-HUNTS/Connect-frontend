@@ -1,0 +1,63 @@
+.wrapper {
+  width: 100%;
+  padding-top: 75px;
+  padding-bottom: 75px;
+
+  background: #000000;
+
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 250px;
+}
+
+.rightsSection {
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+
+  cursor: default;
+
+}
+
+.paragraph {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: NeueMachina-Regular, serif;
+
+  letter-spacing: 1px;
+}
+
+.logoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 50px;
+
+  font-family: NeueMachina-Regular, serif;
+
+  letter-spacing: 1px;
+
+  font-size: 22px;
+  cursor: default;
+}
+
+.footerSpan {
+  font-family: NeueMachina-Regular, serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+
+.socialsSection {
+  display: flex;
+  height: 50px;
+  width: 162px;
+  gap: 36px;
+}
