@@ -13,7 +13,7 @@ export const config = {
       url: "#",
     },
     {
-      title: "Busines",
+      title: "Businesses",
       url: "#",
     },
     {
