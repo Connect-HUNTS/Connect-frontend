@@ -7,20 +7,19 @@ import Link from "next/link";
 
 function MainSection() {
     const words = [
-        "A STARTUP",
-        "THE EXCHANGE",
-        "MARKET MAKER",
-        "A MARKETER",
-        "LAWYERS",
-        "KOLS",
-        "OTC",
-        "FAMILY OFFICE",
-        "DEVELOPERS",
-        "THE AUDIENCE",
-        "INVESTORS",
-        "LAUNCHPADS",
-        "SECURITY",
-        "EVENTS",
+        "STARTUPS", 
+        "INVESTORS", 
+        "VCs", 
+        "EXCHANGES", 
+        "LAUNCHPADS", 
+        "MARKET MAKERS", 
+        "SECURITY", 
+        "LAWYERS", 
+        "KOLs", 
+        "FAMILY OFFICES", 
+        "DEVELOPERS", 
+        "OTC", 
+        "EVENTS"
     ];
     const [animatedWordIndex, setAnimatedWordIndex] = useState(0);
 
