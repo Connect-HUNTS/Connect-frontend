@@ -28,7 +28,7 @@ const UserPage = () => {
     const fetchPartners = async () => {
       try {
         const response = await axios.get(
-          "http://104.207.130.38:3000/users/partners?limit=10&offset=0&sortBy=name&sortOrder=asc",
+          "https://connector.fund/api/users/partners?limit=10&offset=0&sortBy=name&sortOrder=asc",
         );
         setPartners(response.data);
       } catch (error) {
