@@ -16,9 +16,9 @@ import { FiUser } from "react-icons/fi";
 import { LuLogOut } from "react-icons/lu";
 import { LuSettings2 } from "react-icons/lu";
 
-import UsersCard from "@/components/shared/UsersCard";
-import { useEffect, useState } from "react";
+import UsersCard from "../../../components/shared/UsersCard/index";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
 const UserPage = () => {
   const [partners, setPartners] = useState([]);
@@ -131,16 +131,16 @@ const UserPage = () => {
             description={partner.description}
             contacts={partner.contacts}
             country={partner.country}
-            keyCases={partner.keyCases}
+            // keyCases={partner.keyCases}
             type={partner.type}
             links={partner.links}
-            backgroundColors={[
-              "#B4AAF1",
-              "#AAE4F1",
-              "#C1F1AA",
-              "#F1E9AA",
-              "#F1AAAA",
-            ]} // Массив цветов фона
+            // backgroundColors={[
+            //   "#B4AAF1",
+            //   "#AAE4F1",
+            //   "#C1F1AA",
+            //   "#F1E9AA",
+            //   "#F1AAAA",
+            // ]} // Массив цветов фона
           />
         ))}
       </div>

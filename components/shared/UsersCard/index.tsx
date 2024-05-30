@@ -1,30 +1,43 @@
 "use client";
 
-import React from "react";
-
-import { useState } from "react";
-
+import React, { useState } from "react";
 import s from "./UsersCard.module.scss";
 import Image from "next/image";
 
-import dots from "../../../public/images/dots.png";
-import logo from "../../../public/images/cardImage.png";
+// @ts-ignore
+import dots from "/public/images/dots.png";
 
 import { FiUser } from "react-icons/fi";
-import { BsCopy } from "react-icons/bs";
-import { AiOutlineVideoCamera } from "react-icons/ai";
-import { PiChatText } from "react-icons/pi";
-import { AiOutlineLinkedin } from "react-icons/ai";
-import { BsTelegram } from "react-icons/bs";
-import { PiPencilSimpleLineDuotone } from "react-icons/pi";
-import { PiHandshakeFill } from "react-icons/pi";
+import { BsCopy, BsTelegram } from "react-icons/bs";
+import {
+  AiOutlineVideoCamera,
+  AiOutlineLinkedin,
+  AiOutlineLink,
+} from "react-icons/ai";
+import {
+  PiChatText,
+  PiPencilSimpleLineDuotone,
+  PiHandshakeFill,
+} from "react-icons/pi";
 import { SlNotebook } from "react-icons/sl";
 import { GrMap } from "react-icons/gr";
 import { HiOutlineRectangleStack } from "react-icons/hi2";
 import { MdOutlineLocalPostOffice } from "react-icons/md";
-import { AiOutlineLink } from "react-icons/ai";
 
-const UsersCard = ({
+interface UsersCardProps {
+  name: string;
+  imageSrc: string;
+  websiteLink: string;
+  emailLink: string;
+  description: string;
+  proposals: string[];
+  contacts: string[];
+  country: string;
+  links: { type: string; url: string }[];
+  type: string[];
+}
+
+const UsersCard: React.FC<UsersCardProps> = ({
   name,
   imageSrc,
   websiteLink,
@@ -37,7 +50,10 @@ const UsersCard = ({
   type,
 }) => {
   const [copied, setCopied] = useState(false);
-  const [iconClicked, setIconClicked] = useState({
+  const [iconClicked, setIconClicked] = useState<{
+    email: boolean;
+    website: boolean;
+  }>({
     email: false,
     website: false,
   });
@@ -50,12 +66,7 @@ const UsersCard = ({
     "#F1AAAA",
   ];
 
-  const link = [
-    { type: "linkedin", url: "ссылка на LinkedIn" },
-    { type: "telegram", url: "ссылка на Telegram" },
-  ];
-
-  const copyToClipboard = (text) => {
+  const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
     setCopied(true);
 
@@ -64,12 +75,12 @@ const UsersCard = ({
     }, 1000);
   };
 
-  const handleIconClick = (type) => {
-    setIconClicked({ ...iconClicked, [type]: true });
+  const handleIconClick = (type: "email" | "website") => {
+    setIconClicked((prev) => ({ ...prev, [type]: true }));
 
     copyToClipboard(type === "website" ? websiteLink : emailLink);
     setTimeout(() => {
-      setIconClicked({ ...iconClicked, [type]: false });
+      setIconClicked((prev) => ({ ...prev, [type]: false }));
     }, 1000);
   };
 
@@ -83,7 +94,12 @@ const UsersCard = ({
             Website
           </p>
           <div className={s.linkSection}>
-            <a href={`mailto:${emailLink}`} className={s.link} target="_blank">
+            <a
+              href={`mailto:${emailLink}`}
+              className={s.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {websiteLink}
             </a>
             <BsCopy
@@ -100,7 +116,12 @@ const UsersCard = ({
             Email
           </p>
           <div className={s.linkSection}>
-            <a href={`mailto:${emailLink}`} className={s.link} target="_blank">
+            <a
+              href={`mailto:${emailLink}`}
+              className={s.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {emailLink}
             </a>
             <BsCopy
@@ -198,7 +219,7 @@ const UsersCard = ({
                 Social
               </span>
               <div className={s.socialIcons}>
-                {link.map((item, index) => (
+                {links.map((item, index) => (
                   <React.Fragment key={index}>
                     {item.type === "linkedin" && (
                       <AiOutlineLinkedin className={s.icons} />
