@@ -90,7 +90,7 @@ const UsersCard: React.FC<UsersCardProps> = ({
         <img className={s.cardImage} src={imageSrc} alt="Logo" />
         <h3 className={s.linksBlock}>
           <p className={s.linksBlock_title}>
-            <AiOutlineLink style={{ width: "14px", height: "14px" }} />
+            <AiOutlineLink className="icon" />
             Website
           </p>
           <div className={s.linkSection}>
@@ -110,9 +110,7 @@ const UsersCard: React.FC<UsersCardProps> = ({
         </h3>
         <h3 className={s.linksBlock}>
           <p className={s.linksBlock_title}>
-            <MdOutlineLocalPostOffice
-              style={{ width: "14px", height: "14px" }}
-            />
+            <MdOutlineLocalPostOffice className="icon" />
             Email
           </p>
           <div className={s.linkSection}>
@@ -132,11 +130,10 @@ const UsersCard: React.FC<UsersCardProps> = ({
         </h3>
         <div className={s.buttonsSection}>
           <button className={s.messageButton}>
-            <PiChatText style={{ width: "14px", height: "14px" }} /> Send a
-            message
+            <PiChatText className="icon" /> Send a message
           </button>
           <button className={s.meetingButton}>
-            <AiOutlineVideoCamera style={{ width: "14px", height: "14px" }} />
+            <AiOutlineVideoCamera className="icon" />
             Make a meeting
           </button>
         </div>
@@ -147,19 +144,15 @@ const UsersCard: React.FC<UsersCardProps> = ({
           <Image src={dots} alt="dots" />
         </div>
         <div className={s.cardDescriptionBlock}>
-          <h4 className={s.descrHeader}>
-            <PiPencilSimpleLineDuotone
-              style={{ width: "14px", height: "14px" }}
-            />
+          <h4 className={s.descriptionHeader}>
+            <PiPencilSimpleLineDuotone className="icon" />
             Description
           </h4>
           <p className={s.cardDescription}>{description}</p>
         </div>
         <div className={s.typeSection}>
           <h4 className={s.typeSection_header}>
-            <HiOutlineRectangleStack
-              style={{ width: "14px", height: "14px" }}
-            />
+            <HiOutlineRectangleStack className="icon" />
             Type
           </h4>
           <div className={s.spanSection}>
@@ -180,7 +173,7 @@ const UsersCard: React.FC<UsersCardProps> = ({
         </div>
         <div className={s.proposalSection}>
           <h4 className={s.proposalTitle}>
-            <PiHandshakeFill style={{ width: "14px", height: "14px" }} />
+            <PiHandshakeFill className="icon" />
             Proposals
           </h4>
           <ul className={s.proposalListSection}>
@@ -192,7 +185,7 @@ const UsersCard: React.FC<UsersCardProps> = ({
           </ul>
         </div>
         <div className={s.contactsSection}>
-          <div className={s.leftcontactsSection}>
+          <div className={s.leftContactsSection}>
             <h4 className={s.contacts}>
               <SlNotebook />
               Contacts
@@ -208,14 +201,14 @@ const UsersCard: React.FC<UsersCardProps> = ({
           <div className={s.rightContactsSection}>
             <div className={s.locationSection}>
               <span className={s.locationTitle}>
-                <GrMap style={{ width: "14px", height: "14px" }} />
+                <GrMap className="icon" />
                 Location
               </span>
               <span className={s.locationName}>{country}</span>
             </div>
             <div className={s.socialSection}>
               <span className={s.socialTitle}>
-                <FiUser style={{ width: "14px", height: "14px" }} />
+                <FiUser className="icon" />
                 Social
               </span>
               <div className={s.socialIcons}>

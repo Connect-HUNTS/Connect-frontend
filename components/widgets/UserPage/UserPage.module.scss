@@ -9,7 +9,7 @@
   background: #161616;
 }
 
-.navSection {
+.header__section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,11 +23,17 @@
 
 .header {
   display: flex;
+  flex-direction: column;
   height: 28px;
 
   gap: 12px;
 
   padding: 0 8px;
+}
+
+.logoSection {
+  display: flex;
+  gap: 12px;
 }
 
 .logo {
@@ -135,7 +141,7 @@
 
 }
 
-.cardWrapper {
+.card__section {
   padding: 28px 0;
 
 }
