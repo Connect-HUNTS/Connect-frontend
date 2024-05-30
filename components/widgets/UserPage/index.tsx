@@ -4,49 +4,54 @@ import s from "./UserPage.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 
-import Logo from "../../../public/images/LogoPurple.svg";
-import investorIcon from "../../../public/images/investorIcon.png";
+import Logo from "/public/images/LogoPurple.svg";
+import investorIcon from "/public/images/investorIcon.png";
 
-import Forms from "../../../public/socials/forms.png";
-import Settings from "../../../public/images/settingUser.png";
-import Chat from "../../../public/images/chatUser.png";
-import Bell from "../../../public/images/userNotification.png";
+import Forms from "/public/socials/forms.png";
+import Settings from "/public/images/settingUser.png";
+import Chat from "/public/images/chatUser.png";
+import Bell from "/public/images/userNotification.png";
 
 import { FiUser } from "react-icons/fi";
 import { LuLogOut } from "react-icons/lu";
 import { LuSettings2 } from "react-icons/lu";
 
 import UsersCard from "../../../components/shared/UsersCard/index";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const UserPage = () => {
   const [partners, setPartners] = useState([]);
-  console.log(partners);
 
-  useEffect(() => {
-    const fetchPartners = async () => {
-      try {
-        const response = await axios.get(
-          "https://connector.fund/api/users/partners?limit=10&offset=0&sortBy=name&sortOrder=asc",
-        );
-        setPartners(response.data);
-      } catch (error) {
-        console.error("Error fetching partners:", error);
-      }
-    };
-
-    fetchPartners();
-  }, []);
+  //Dummy data for UserCard
+  const cardData = [
+    {
+      id: 1,
+      name: "John Doe",
+      logo: "/path/to/logo.jpg",
+      websiteLink: "https://example.com",
+      contactEmail: "john@example.com",
+      proposals: ["Proposal 1", "Proposal 2"],
+      description: "User description goes here.",
+      contacts: ["Contact 1", "Contact 2"],
+      country: "Country",
+      keyCases: ["Case 1", "Case 2"],
+      type: ["Type 1", "Type 2"],
+      links: [
+        { type: "linkedin", url: "https://linkedin.com/in/johndoe" },
+        { type: "telegram", url: "https://t.me/johndoe" },
+      ],
+    },
+  ];
 
   return (
     <div className={s.wrapper}>
-      <div className={s.navSection}>
-        <div>
-          <div className={s.header}>
+      <div className={s.header__section}>
+        <div className={s.header}>
+          <div className={s.logoSection}>
             <Image className={s.logo} src={Logo} alt="logo" />
             <h3 className={s.headerTitle}>Connector</h3>
           </div>
+
           <div className={s.main}>
             <p className={s.subtitle}>Navigations</p>
             <ul className={s.btnList}>
@@ -70,12 +75,12 @@ const UserPage = () => {
           Exit
         </Link>
       </div>
-      <div className={s.cardWrapper}>
+      <div className={s.card__section}>
         <div className={s.userPageHeader}>
           <div style={{ paddingBottom: "26px" }}>
-            {partners.map((item, index) => (
+            {cardData.map((item, index) => (
               <h4 className={s.usercardTitle} key={index}>
-                {item.name}
+                Hi {item.name},
               </h4>
             ))}
             <br />
@@ -120,7 +125,7 @@ const UserPage = () => {
             </div>
           </div>
         </div>
-        {partners.map((partner) => (
+        {cardData.map((partner) => (
           <UsersCard
             key={partner.id}
             name={partner.name}
@@ -131,16 +136,16 @@ const UserPage = () => {
             description={partner.description}
             contacts={partner.contacts}
             country={partner.country}
-            // keyCases={partner.keyCases}
+            keyCases={partner.keyCases}
             type={partner.type}
             links={partner.links}
-            // backgroundColors={[
-            //   "#B4AAF1",
-            //   "#AAE4F1",
-            //   "#C1F1AA",
-            //   "#F1E9AA",
-            //   "#F1AAAA",
-            // ]} // Массив цветов фона
+            backgroundColors={[
+              "#B4AAF1",
+              "#AAE4F1",
+              "#C1F1AA",
+              "#F1E9AA",
+              "#F1AAAA",
+            ]}
           />
         ))}
       </div>

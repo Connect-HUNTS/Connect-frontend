@@ -1,13 +1,13 @@
 import s from "./Home.module.scss";
 
-import NavBar from "@/components/widgets/NavBar";
-import MainSection from "@/components/widgets/MainSection";
+import NavBar from "../components/widgets/NavBar";
+import MainSection from "../components/widgets/MainSection";
 
 import leftGradient from "../public/images/gradient.png";
 import globe from "/public/images/animatedGlobe.gif";
 import Image from "next/image";
-import CustomCursor from "@/components/shared/customCursor";
-import Footer from "@/components/widgets/Footer";
+import CustomCursor from "../components/shared/customCursor";
+import Footer from "../components/widgets/Footer";
 
 export default function Home() {
   return (
