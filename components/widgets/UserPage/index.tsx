@@ -41,7 +41,6 @@ const UserPage = () => {
     },
   ];
 
-  // @ts-ignore
   return (
     <div className={s.wrapper}>
       <div className={s.sidebar__section}>

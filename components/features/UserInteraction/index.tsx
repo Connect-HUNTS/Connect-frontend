@@ -13,10 +13,10 @@ import { LuSettings2 } from "react-icons/lu";
 const UserInteraction = () => {
   return (
     <div className={s.headerSection}>
-      <div className={s.logoSection}>
+      <Link className={s.logoLink} href="/">
         <Image className={s.logo} src={Logo} alt="logo" />
         <h3 className={s.headerTitle}>Connector</h3>
-      </div>
+      </Link>
 
       <div className={s.main}>
         <p className={s.subtitle}>Navigations</p>
