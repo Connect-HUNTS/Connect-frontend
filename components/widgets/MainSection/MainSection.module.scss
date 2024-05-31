@@ -29,7 +29,9 @@
 }
 
 .subTitle {
-  width: 830px;
+  display: flex;
+  align-items: center;
+  width: 854px;
 
   font-size: 48px;
   font-weight: 400;
@@ -53,15 +55,11 @@
   cursor: default;
   color: transparent;
   position: relative;
-
 }
 
 .animatedSpan::before {
-
-
   content: attr(data-content);
   position: absolute;
-
 
   left: 0;
   bottom: 0;

@@ -1,10 +1,11 @@
 "use client";
 
+import React, { useState } from "react";
 import s from "./UserPage.module.scss";
 import Link from "next/link";
+import Image, { StaticImageData } from "next/image";
 
 import investorIcon from "/public/images/investorIcon.png";
-
 import Settings from "/public/images/settingUser.png";
 import Chat from "/public/images/chatUser.png";
 import Bell from "/public/images/userNotification.png";
@@ -12,20 +13,41 @@ import Bell from "/public/images/userNotification.png";
 import { LuLogOut } from "react-icons/lu";
 
 import UsersCard from "../../../components/shared/UsersCard/index";
-import React, { useState } from "react";
 import UserInteraction from "../../features/UserInteraction";
 import WelcomeBackCard from "../../features/WelcomeBack";
 import UserAccountSection from "../../features/UserAccountSection";
 
-const UserPage = () => {
-  const [partners, setPartners] = useState([{ id: 2, name: "Bob Johnson" }]);
+interface Partner {
+  id: number;
+  name: string;
+}
 
-  //Dummy data for UserCard
-  const cardData = [
+interface CardData {
+  id: number;
+  name: string;
+  logo: string;
+  websiteLink: string;
+  contactEmail: string;
+  proposals: string[];
+  description: string;
+  contacts: string[];
+  country: string;
+  keyCases: string[];
+  type: string[];
+  links: { type: string; url: string }[];
+}
+
+const UserPage: React.FC = () => {
+  const [partners, setPartners] = useState<Partner[]>([
+    { id: 2, name: "Bob Johnson" },
+  ]);
+
+  // Dummy data for UserCard
+  const cardData: CardData[] = [
     {
       id: 1,
       name: "John Doe",
-      logo: "/path/to/logo.jpg",
+      logo: "/public/images/cardImage.png",
       websiteLink: "https://example.com",
       contactEmail: "john@example.com",
       proposals: ["Proposal 1", "Proposal 2"],
@@ -41,7 +63,6 @@ const UserPage = () => {
     },
   ];
 
-  // @ts-ignore
   return (
     <div className={s.wrapper}>
       <div className={s.sidebar__section}>
@@ -58,10 +79,10 @@ const UserPage = () => {
           <WelcomeBackCard cardData={cardData} />
           <UserAccountSection
             partners={partners}
-            investorIcon={investorIcon}
-            settingsIcon={Settings}
-            chatIcon={Chat}
-            notificationIcon={Bell}
+            investorIcon={investorIcon as StaticImageData}
+            settingsIcon={Settings as StaticImageData}
+            chatIcon={Chat as StaticImageData}
+            notificationIcon={Bell as StaticImageData}
           />
         </div>
         {cardData.map((partner) => (

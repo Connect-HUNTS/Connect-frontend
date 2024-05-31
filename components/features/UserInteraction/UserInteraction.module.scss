@@ -7,9 +7,11 @@
   padding: 0 8px;
 }
 
-.logoSection {
+.logoLink {
   display: flex;
   gap: 12px;
+
+  text-decoration: none;
 }
 
 .logo {

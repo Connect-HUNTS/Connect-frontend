@@ -30,7 +30,6 @@ export default function Home() {
           src={leftGradient}
           alt={"left gradient"}
         />
-        {/*<Image className={s.globeShadow} src={leftGradient} alt={"shadow gradient"}/>*/}
       </main>
     </>
   );

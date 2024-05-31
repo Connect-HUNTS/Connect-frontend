@@ -1,0 +1,44 @@
+.typeSection {
+  display: flex;
+  align-content: center;
+  align-items: flex-start;
+
+  letter-spacing: 1px;
+  background: #181818;
+  padding: 16px 12px;
+  width: 484px;
+  border-radius: 19px;
+  gap: 24px;
+}
+
+.typeSection_header {
+  display: flex;
+  align-items: center;
+
+  font-family: NeueMachina-Regular, serif;
+  font-size: 12px;
+  font-weight: 400;
+  gap: 8px;
+  color: #FFFFFF;
+}
+
+.spanSection {
+  box-sizing: border-box;
+  width: 370px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.typeSpan {
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 9px;
+
+  color: #181818;
+  font-family: NeueMachina-Regular, serif;
+  letter-spacing: 1px;
+  cursor: default;
+  padding: 3px 12px;
+}

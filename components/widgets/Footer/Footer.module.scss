@@ -1,20 +1,21 @@
 .wrapper {
-  width: 100%;
-  padding-top: 75px;
-  padding-bottom: 75px;
+  box-sizing: border-box;
 
+  width: 100vw;
+  height: 150px;
+  padding: 50px 96px;
   background: #000000;
 
   z-index: 1;
 
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 250px;
 }
 
 .rightsSection {
-  height: 50px;
+  line-height: 50px;
 
   display: flex;
   align-items: center;
@@ -38,7 +39,7 @@
   flex-direction: column;
   align-items: center;
 
-  height: 50px;
+  line-height: 50px;
 
   font-family: NeueMachina-Regular, serif;
 
@@ -57,7 +58,7 @@
 
 .socialsSection {
   display: flex;
-  height: 50px;
+  line-height: 50px;
   width: 162px;
   gap: 36px;
 }

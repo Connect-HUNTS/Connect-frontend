@@ -3,26 +3,15 @@
 import React, { useState } from "react";
 import s from "./UsersCard.module.scss";
 import Image from "next/image";
-
-// @ts-ignore
 import dots from "/public/images/dots.png";
 
-import { FiUser } from "react-icons/fi";
-import { BsCopy, BsTelegram } from "react-icons/bs";
-import {
-  AiOutlineVideoCamera,
-  AiOutlineLinkedin,
-  AiOutlineLink,
-} from "react-icons/ai";
-import {
-  PiChatText,
-  PiPencilSimpleLineDuotone,
-  PiHandshakeFill,
-} from "react-icons/pi";
-import { SlNotebook } from "react-icons/sl";
-import { GrMap } from "react-icons/gr";
-import { HiOutlineRectangleStack } from "react-icons/hi2";
+import { AiOutlineVideoCamera, AiOutlineLink } from "react-icons/ai";
 import { MdOutlineLocalPostOffice } from "react-icons/md";
+import { PiChatText, PiPencilSimpleLineDuotone } from "react-icons/pi";
+import TypeSection from "../../features/TypeSection";
+import ProposalsSection from "../../features/ProposalSection";
+import ContactsSection from "../../features/ContactsSection";
+import LinksSection from "../../features/LinksSection";
 
 interface UsersCardProps {
   name: string;
@@ -88,46 +77,20 @@ const UsersCard: React.FC<UsersCardProps> = ({
     <div className={s.wrapper}>
       <div className={s.leftSection}>
         <img className={s.cardImage} src={imageSrc} alt="Logo" />
-        <h3 className={s.linksBlock}>
-          <p className={s.linksBlock_title}>
-            <AiOutlineLink className="icon" />
-            Website
-          </p>
-          <div className={s.linkSection}>
-            <a
-              href={`mailto:${emailLink}`}
-              className={s.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {websiteLink}
-            </a>
-            <BsCopy
-              className={`${s.copyIcon} ${iconClicked.website ? s.clickedIcon : ""}`}
-              onClick={() => handleIconClick("website")}
-            />
-          </div>
-        </h3>
-        <h3 className={s.linksBlock}>
-          <p className={s.linksBlock_title}>
-            <MdOutlineLocalPostOffice className="icon" />
-            Email
-          </p>
-          <div className={s.linkSection}>
-            <a
-              href={`mailto:${emailLink}`}
-              className={s.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {emailLink}
-            </a>
-            <BsCopy
-              className={`${s.copyIcon} ${iconClicked.email ? s.clickedIcon : ""}`}
-              onClick={() => handleIconClick("email")}
-            />
-          </div>
-        </h3>
+        <LinksSection
+          title="Website"
+          link={websiteLink}
+          icon={<AiOutlineLink className="icon" />}
+          iconClicked={iconClicked.website}
+          handleIconClick={() => handleIconClick("website")}
+        />
+        <LinksSection
+          title="Email"
+          link={`mailto:${emailLink}`}
+          icon={<MdOutlineLocalPostOffice className="icon" />}
+          iconClicked={iconClicked.email}
+          handleIconClick={() => handleIconClick("email")}
+        />
         <div className={s.buttonsSection}>
           <button className={s.messageButton}>
             <PiChatText className="icon" /> Send a message
@@ -150,82 +113,9 @@ const UsersCard: React.FC<UsersCardProps> = ({
           </h4>
           <p className={s.cardDescription}>{description}</p>
         </div>
-        <div className={s.typeSection}>
-          <h4 className={s.typeSection_header}>
-            <HiOutlineRectangleStack className="icon" />
-            Type
-          </h4>
-          <div className={s.spanSection}>
-            {type.map((typeItem, index) => (
-              <span
-                key={index}
-                className={s.typeSpan}
-                style={{
-                  background:
-                    backgroundColors[index % backgroundColors.length] ||
-                    "#FFFFFF",
-                }}
-              >
-                {typeItem}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className={s.proposalSection}>
-          <h4 className={s.proposalTitle}>
-            <PiHandshakeFill className="icon" />
-            Proposals
-          </h4>
-          <ul className={s.proposalListSection}>
-            {proposals.map((item, index) => (
-              <li key={index} className={s.proposalList}>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={s.contactsSection}>
-          <div className={s.leftContactsSection}>
-            <h4 className={s.contacts}>
-              <SlNotebook />
-              Contacts
-            </h4>
-            <ul className={s.contactsList}>
-              {contacts.map((item, index) => (
-                <li key={index} className={s.contactsListSection}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className={s.rightContactsSection}>
-            <div className={s.locationSection}>
-              <span className={s.locationTitle}>
-                <GrMap className="icon" />
-                Location
-              </span>
-              <span className={s.locationName}>{country}</span>
-            </div>
-            <div className={s.socialSection}>
-              <span className={s.socialTitle}>
-                <FiUser className="icon" />
-                Social
-              </span>
-              <div className={s.socialIcons}>
-                {links.map((item, index) => (
-                  <React.Fragment key={index}>
-                    {item.type === "linkedin" && (
-                      <AiOutlineLinkedin className={s.icons} />
-                    )}
-                    {item.type === "telegram" && (
-                      <BsTelegram className={s.icons} />
-                    )}
-                  </React.Fragment>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <TypeSection type={type} backgroundColors={backgroundColors} />
+        <ProposalsSection proposals={proposals} />
+        <ContactsSection contacts={contacts} country={country} links={links} />
       </div>
     </div>
   );

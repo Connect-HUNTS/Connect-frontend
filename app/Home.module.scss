@@ -1,21 +1,17 @@
 .wrapper {
   position: relative;
-
   overflow: hidden;
-
   margin: 0 auto;
 
   min-height: 100%;
   width: auto;
-
-
   background-color: black;
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
   background-repeat: repeat;
-
-
 }
 
 
@@ -31,19 +27,19 @@
   overflow: hidden;
 
   background-image: url('../public/images/Grid.svg');
-  background-size: cover; /* Растягивает изображение, чтобы оно полностью покрыло задний фон */
-  background-position: center; /* Позиционирует изображение по центру */
+  background-size: cover;
+  background-position: center;
 
-  animation: fadeInOut 7s infinite alternate; /* Анимация будет повторяться бесконечно */
+  animation: fadeInOut 7s infinite alternate;
 
 }
 
 @keyframes fadeInOut {
   0%, 100% {
-    opacity: 0.7; /* Изображение полностью прозрачно в начале и в конце */
+    opacity: 0.7;
   }
   50% {
-    opacity: 0.9; /* Изображение полностью видимо на половине анимации */
+    opacity: 0.9;
   }
 }
 

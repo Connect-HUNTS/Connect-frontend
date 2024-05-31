@@ -21,8 +21,8 @@ const NavBar = () => {
         ))}
       </div>
       <div className={s.buttonsSection}>
-        <button className={s.navBtn}>Log In</button>
-        <button className={s.navBtn}>Sign Up</button>
+        <button className={s.navButton}>Log In</button>
+        <button className={s.navButton}>Sign Up</button>
       </div>
     </nav>
   );
