@@ -2,7 +2,6 @@
 
 import s from "./UserPage.module.scss";
 import Link from "next/link";
-import Image from "next/image";
 
 import investorIcon from "/public/images/investorIcon.png";
 
@@ -15,9 +14,11 @@ import { LuLogOut } from "react-icons/lu";
 import UsersCard from "../../../components/shared/UsersCard/index";
 import React, { useState } from "react";
 import UserInteraction from "../../features/UserInteraction";
+import WelcomeBackCard from "../../features/WelcomeBack";
+import UserAccountSection from "../../features/UserAccountSection";
 
 const UserPage = () => {
-  const [partners, setPartners] = useState([]);
+  const [partners, setPartners] = useState([{ id: 2, name: "Bob Johnson" }]);
 
   //Dummy data for UserCard
   const cardData = [
@@ -40,66 +41,28 @@ const UserPage = () => {
     },
   ];
 
+  // @ts-ignore
   return (
     <div className={s.wrapper}>
-      <div className={s.header__section}>
+      <div className={s.sidebar__section}>
         <div className={s.header}>
           <UserInteraction />
         </div>
-        <Link className={s.navBtn} href="/">
+        <Link className={s.navButton} href="/">
           <LuLogOut className="icon" />
           Exit
         </Link>
       </div>
       <div className={s.card__section}>
         <div className={s.userPageHeader}>
-          <div style={{ paddingBottom: "26px" }}>
-            {cardData.map((item, index) => (
-              <h4 className={s.usercardTitle} key={index}>
-                Hi {item.name},
-              </h4>
-            ))}
-            <br />
-            <span className={s.welcomeBack}>WELCOME BACK!</span>
-          </div>
-          <div className={s.mainRight}>
-            <div className={s.userAccount}>
-              <Image
-                src={investorIcon}
-                className={s.userNameIcons}
-                alt="investor icon"
-              />
-              <div className={s.rightSection}>
-                <div className={s.center}>
-                  {partners.map((item, index) => (
-                    <h4 className={s.userName} key={index}>
-                      {item.name}
-                    </h4>
-                  ))}
-                  <p className={s.userType}>Investor</p>
-                </div>
-                <div className={s.userIcons}>
-                  <Image
-                    src={Settings}
-                    className={s.userNameIcons}
-                    alt="settings"
-                  />
-                  <Image
-                    src={Chat}
-                    className={s.userNameIcons}
-                    alt="user chat"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className={s.bellUser}>
-              <Image
-                className={s.notifications}
-                src={Bell}
-                alt="notification"
-              />
-            </div>
-          </div>
+          <WelcomeBackCard cardData={cardData} />
+          <UserAccountSection
+            partners={partners}
+            investorIcon={investorIcon}
+            settingsIcon={Settings}
+            chatIcon={Chat}
+            notificationIcon={Bell}
+          />
         </div>
         {cardData.map((partner) => (
           <UsersCard

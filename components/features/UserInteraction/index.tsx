@@ -8,7 +8,7 @@ import Forms from "/public/socials/forms.png";
 
 import { FiUser } from "react-icons/fi";
 
-import { LuLogOut, LuSettings2 } from "react-icons/lu";
+import { LuSettings2 } from "react-icons/lu";
 
 const UserInteraction = () => {
   return (
@@ -25,11 +25,11 @@ const UserInteraction = () => {
             <Image src={Forms} alt={"img"} />
             Forms
           </Link>
-          <Link className={s.navBtn} href="">
+          <Link className={s.navButton} href="">
             <FiUser className="icon" />
             Account
           </Link>
-          <Link className={s.navBtn} href="">
+          <Link className={s.navButton} href="">
             <LuSettings2 className="icon" />
             Settings
           </Link>
