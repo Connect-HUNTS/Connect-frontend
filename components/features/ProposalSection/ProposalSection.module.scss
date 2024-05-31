@@ -1,0 +1,32 @@
+.proposalSection {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 19px;
+  background: #181818;
+  padding: 16px 12px;
+  width: 484px;
+}
+
+.proposalTitle {
+  display: flex;
+  align-items: center;
+
+  font-family: NeueMachina-Regular, serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  gap: 8px;
+}
+
+.proposalListSection {
+  padding: 16px 12px;
+}
+
+.proposalList {
+  font-family: NeueMachina-Regular, serif;
+  font-size: 10px;
+  font-weight: 300;
+  padding-bottom: 8px;
+  letter-spacing: 1px;
+}

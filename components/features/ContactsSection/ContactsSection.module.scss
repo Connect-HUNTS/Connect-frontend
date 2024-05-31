@@ -1,0 +1,108 @@
+.contactsSection {
+  display: flex;
+
+  gap: 14px;
+  border-radius: 19px;
+  width: 484px;
+}
+
+.leftContactsSection {
+  border-radius: 19px;
+  background: #181818;
+  padding: 16px 12px;
+  height: auto;
+  width: 220px;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+
+  font-size: 12px;
+  font-weight: 400;
+  font-family: NeueMachina-Regular, serif;
+  letter-spacing: 1px;
+  gap: 10px;
+}
+
+.contactsList {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+  gap: 10px;
+}
+
+.contactsListSection {
+  font-family: NeueMachina-Regular, serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.rightContactsSection {
+  display: flex;
+  flex-direction: column;
+
+  width: 260px;
+  gap: 14px;
+}
+
+.locationSection {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  background: #181818;
+  border-radius: 19px;
+  gap: 24px;
+  padding: 16px 12px;
+  font-family: NeueMachina-Regular, serif;
+  letter-spacing: 1px;
+}
+
+.locationTitle {
+  display: flex;
+  gap: 8px;
+
+  font-size: 12px;
+  font-weight: 400;
+  font-family: NeueMachina-Regular, serif;
+  letter-spacing: 1px;
+}
+
+.locationName {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: NeueMachina-Regular, serif;
+  letter-spacing: 1px;
+}
+
+.socialSection {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  background: #181818;
+  border-radius: 19px;
+  padding: 16px 12px;
+  gap: 24px;
+  font-family: NeueMachina-Regular, serif;
+  letter-spacing: 1px;
+}
+
+
+.socialTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 12px;
+  font-weight: 400;
+  font-family: NeueMachina-Regular, serif;
+  letter-spacing: 1px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 12px;
+}
