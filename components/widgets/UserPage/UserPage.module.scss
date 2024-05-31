@@ -15,67 +15,8 @@
   justify-content: space-between;
 
   background: #1E1E1E;
-
   width: 236px;
-
   padding: 28px 36px;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  height: 28px;
-
-  gap: 12px;
-
-  padding: 0 8px;
-}
-
-.logoSection {
-  display: flex;
-  gap: 12px;
-}
-
-.logo {
-  width: 26px;
-  height: 26px;
-}
-
-.headerTitle {
-  font-family: NeueMachina-Regular, serif;
-  letter-spacing: 1px;
-  font-size: 22px;
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  padding-top: 56px;
-
-}
-
-.subtitle {
-  font-size: 10px;
-  font-weight: 400;
-
-  font-family: NeueMachina-Regular, serif;
-
-  color: #BFBFBF;
-
-  letter-spacing: 1px;
-
-  padding-left: 12px;
-}
-
-.btnList {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
-  text-decoration: none;
-
-  padding-top: 20px;
-
 }
 
 .navBtn {
@@ -114,36 +55,13 @@
   }
 }
 
-.formsBtn {
-  display: flex;
-  align-items: center;
-
-  width: 158px;
-  height: 38px;
-
-  gap: 12px;
-
-  color: white;
-
-  text-decoration: none;
-
-  font-size: 14px;
-  font-weight: 500;
-
-  padding: 6px 8px;
-
-  letter-spacing: 1px;
-
-  font-family: NeueMachina-Regular, serif;
-
-  border-radius: 10px;
-  background: linear-gradient(120deg, #7331FF, #B454FF);
-
+.icon {
+  width: 26px;
+  height: 26px;
 }
 
 .card__section {
   padding: 28px 0;
-
 }
 
 .usercardTitle {

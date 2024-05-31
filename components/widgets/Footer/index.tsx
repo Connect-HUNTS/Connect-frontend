@@ -8,7 +8,6 @@ import instagramLogo from "/public/socials/instagramLogo.png";
 import facebookLogo from "/public/socials/facebookLogo.png";
 import twitterLogo from "/public/socials/twitterLogo.png";
 import Link from "next/link";
-import CustomCursor from "../../../components/shared/customCursor/index";
 
 const Footer = () => {
   return (

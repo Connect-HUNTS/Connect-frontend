@@ -4,20 +4,17 @@ import s from "./UserPage.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 
-import Logo from "/public/images/LogoPurple.svg";
 import investorIcon from "/public/images/investorIcon.png";
 
-import Forms from "/public/socials/forms.png";
 import Settings from "/public/images/settingUser.png";
 import Chat from "/public/images/chatUser.png";
 import Bell from "/public/images/userNotification.png";
 
-import { FiUser } from "react-icons/fi";
 import { LuLogOut } from "react-icons/lu";
-import { LuSettings2 } from "react-icons/lu";
 
 import UsersCard from "../../../components/shared/UsersCard/index";
-import { useState } from "react";
+import React, { useState } from "react";
+import UserInteraction from "../../features/UserInteraction";
 
 const UserPage = () => {
   const [partners, setPartners] = useState([]);
@@ -47,31 +44,10 @@ const UserPage = () => {
     <div className={s.wrapper}>
       <div className={s.header__section}>
         <div className={s.header}>
-          <div className={s.logoSection}>
-            <Image className={s.logo} src={Logo} alt="logo" />
-            <h3 className={s.headerTitle}>Connector</h3>
-          </div>
-
-          <div className={s.main}>
-            <p className={s.subtitle}>Navigations</p>
-            <ul className={s.btnList}>
-              <Link className={s.formsBtn} href="">
-                <Image src={Forms} alt={"img"} />
-                Forms
-              </Link>
-              <Link className={s.navBtn} href="">
-                <FiUser style={{ width: "26px", height: "26px" }} />
-                Account
-              </Link>
-              <Link className={s.navBtn} href="">
-                <LuSettings2 style={{ width: "26px", height: "26px" }} />
-                Settings
-              </Link>
-            </ul>
-          </div>
+          <UserInteraction />
         </div>
         <Link className={s.navBtn} href="/">
-          <LuLogOut style={{ width: "26px", height: "26px" }} />
+          <LuLogOut className="icon" />
           Exit
         </Link>
       </div>

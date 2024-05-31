@@ -1,6 +1,6 @@
 import styles from "../styles/global.scss";
 import CustomCursor from "../components/shared/customCursor";
-import Footer from "../components/widgets/Footer/index";
+import Footer from "../components/widgets/Footer";
 
 export const metadata = {
   title: "Connector",
