@@ -16,6 +16,7 @@ import UsersCard from "../../../components/shared/UsersCard/index";
 import UserInteraction from "../../features/UserInteraction";
 import WelcomeBackCard from "../../features/WelcomeBack";
 import UserAccountSection from "../../features/UserAccountSection";
+import FiltersSection from "../../features/FiltersSection";
 
 interface Partner {
   id: number;
@@ -77,13 +78,6 @@ const UserPage: React.FC = () => {
       <div className={s.card__section}>
         <div className={s.userPageHeader}>
           <WelcomeBackCard cardData={cardData} />
-          <UserAccountSection
-            partners={partners}
-            investorIcon={investorIcon as StaticImageData}
-            settingsIcon={Settings as StaticImageData}
-            chatIcon={Chat as StaticImageData}
-            notificationIcon={Bell as StaticImageData}
-          />
         </div>
         {cardData.map((partner) => (
           <UsersCard
@@ -108,6 +102,16 @@ const UserPage: React.FC = () => {
             ]}
           />
         ))}
+      </div>
+      <div>
+        <UserAccountSection
+          partners={partners}
+          investorIcon={investorIcon as StaticImageData}
+          settingsIcon={Settings as StaticImageData}
+          chatIcon={Chat as StaticImageData}
+          notificationIcon={Bell as StaticImageData}
+        />
+        <FiltersSection />
       </div>
     </div>
   );

@@ -1,11 +1,15 @@
 .wrapper {
   display: flex;
   gap: 35px;
+  width: 300px;
+  margin-top: 41px;
+  margin-bottom: 83px;
 }
 
 .userAccount {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   border-radius: 12px;
   background: #1E1E1E;
@@ -47,6 +51,7 @@
 
 .userIcons {
   display: flex;
+  align-items: center;
   gap: 15px;
 }
 
