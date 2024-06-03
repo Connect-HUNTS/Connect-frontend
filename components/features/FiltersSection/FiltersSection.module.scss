@@ -1,6 +1,51 @@
 .wrapper {
+  box-sizing: border-box;
   width: 300px;
   height: 855px;
   background: #1E1E1E;
   border-radius: 26px;
+  padding: 26px 16px 26px 26px;
+
+  position: relative;
+  margin-bottom: 16px;
+  display: block;
+  flex-direction: column;
+
+}
+
+.filtersHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.filterSection {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  height: 16px;
+
+  line-height: 16px;
+
+}
+
+.filterIcon {
+  width: 16px;
+  height: 16px;
+  color: white;
+}
+
+.header {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.clearSection {
+  display: flex;
+  align-items: center;
+
+  height: 16px;
+  font-size: 10px;
+  font-weight: 400;
 }

@@ -17,6 +17,7 @@ import UserInteraction from "../../features/UserInteraction";
 import WelcomeBackCard from "../../features/WelcomeBack";
 import UserAccountSection from "../../features/UserAccountSection";
 import FiltersSection from "../../features/FiltersSection";
+import FiltersDropdown from "../FiltersDropdown";
 
 interface Partner {
   id: number;
