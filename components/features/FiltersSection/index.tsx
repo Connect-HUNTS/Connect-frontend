@@ -1,9 +1,21 @@
 import s from "./FiltersSection.module.scss";
 import filterIcon from "../../../public/icons/filter-icon.svg";
 import Image from "next/image";
-import { BiFilterAlt } from "react-icons/bi";
-import FiltersDropdown from "../../widgets/FiltersDropdown";
 import React from "react";
+import Accordion from "../../widgets/Accordion";
+
+const testData = [
+  {
+    title: "Accordion 1",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+  },
+  {
+    title: "Accordion 2",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+  },
+];
 
 const FiltersSection = () => {
   return (
@@ -15,7 +27,7 @@ const FiltersSection = () => {
         </div>
         <p className={s.clearSection}>Clear all</p>
       </div>
-      <FiltersDropdown />
+      <Accordion data={testData} />
     </div>
   );
 };

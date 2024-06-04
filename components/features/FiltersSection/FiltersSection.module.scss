@@ -17,6 +17,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 28px;
+  padding: 0 0 0 14px;
 }
 
 .filterSection {
@@ -44,6 +45,7 @@
 .clearSection {
   display: flex;
   align-items: center;
+  color: #BFBFBF;
 
   height: 16px;
   font-size: 10px;
