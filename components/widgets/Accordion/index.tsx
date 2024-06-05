@@ -4,6 +4,7 @@ import s from "./Accordion.module.scss";
 import downArrow from "../../../public/icons/arrow-down.png";
 import upArrow from "../../../public/icons/arrow-up.png";
 import Image from "next/image";
+import BlueCheckbox from "../../features/checkboxes/BlueCheckbox";
 
 interface AccordionItem {
   title: string;
@@ -23,6 +24,10 @@ const Accordion: React.FC<AccordionProps> = ({ data }) => {
     } else {
       setSelected(i);
     }
+  };
+
+  const handleCheckboxClick = (e) => {
+    e.stopPropagation();
   };
 
   return (
@@ -45,8 +50,9 @@ const Accordion: React.FC<AccordionProps> = ({ data }) => {
                 <h2>{selected === index ? dataItem.title : " "}</h2>
                 <Image src={upArrow} alt="arrow up" />
               </div>
-
-              <p className={s.show}>{dataItem.content}</p>
+              <BlueCheckbox onClick={handleCheckboxClick} />
+              <BlueCheckbox onClick={handleCheckboxClick} />
+              <BlueCheckbox onClick={handleCheckboxClick} />
             </div>
           </div>
         ))}

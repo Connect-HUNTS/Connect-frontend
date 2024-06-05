@@ -6,12 +6,22 @@ import Accordion from "../../widgets/Accordion";
 
 const testData = [
   {
-    title: "Accordion 1",
+    title: "Round",
     content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
   },
   {
-    title: "Accordion 2",
+    title: "Types",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+  },
+  {
+    title: "Valuation",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+  },
+  {
+    title: "Price",
     content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
   },
