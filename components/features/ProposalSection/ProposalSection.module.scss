@@ -1,11 +1,12 @@
 .proposalSection {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 
   border-radius: 19px;
   background: #181818;
   padding: 16px 12px;
-  width: 484px;
+  width: 100%;
 }
 
 .proposalTitle {

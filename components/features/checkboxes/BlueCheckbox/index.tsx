@@ -8,7 +8,9 @@ interface BlueCheckboxProps {
 const BlueCheckbox: React.FC<BlueCheckboxProps> = ({ onClick }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleCheckboxClick = (event: React.MouseEvent<HTMLInputElement>) => {
+  const handleCheckboxClick = (
+    event: React.MouseEvent<HTMLInputElement>,
+  ): void => {
     event.stopPropagation(); // предотвращаем всплытие события
     onClick(); // вызываем переданную функцию onClick
   };

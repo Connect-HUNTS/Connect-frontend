@@ -1,17 +1,18 @@
 .contactsSection {
   display: flex;
+  box-sizing: border-box;
 
   gap: 14px;
   border-radius: 19px;
-  width: 484px;
 }
 
 .leftContactsSection {
+  box-sizing: border-box;
   border-radius: 19px;
   background: #181818;
   padding: 16px 12px;
   height: auto;
-  width: 220px;
+  width: 50%;
 }
 
 .contacts {
@@ -40,10 +41,14 @@
 }
 
 .rightContactsSection {
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
+  padding-right: 22px;
 
-  width: 260px;
+  width: 100%;
+
   gap: 14px;
 }
 
