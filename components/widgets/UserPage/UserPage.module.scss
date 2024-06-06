@@ -1,11 +1,8 @@
 .wrapper {
   display: flex;
+  box-sizing: border-box;
 
   gap: 32px;
-
-  width: 100%;
-  height: 1240px;
-
   background: #161616;
 }
 
@@ -47,13 +44,12 @@
   height: 26px;
 }
 
-.card__section {
-  padding: 28px 0;
-}
-
-
 .userPageHeader {
   display: flex;
+  flex-direction: row;
+}
+
+.cardHeader {
+  display: flex;
   justify-content: space-between;
-  margin-bottom: 26px;
 }

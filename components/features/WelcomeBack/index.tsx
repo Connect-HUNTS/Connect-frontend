@@ -12,7 +12,7 @@ interface WelcomeBackCardProps {
 
 const WelcomeBackCard: React.FC<WelcomeBackCardProps> = ({ cardData }) => {
   return (
-    <div style={{ paddingBottom: "26px" }}>
+    <div className={s.wrapper}>
       {cardData.map((item, index) => (
         <h4 className={s.usercardTitle} key={index}>
           Hi {item.name},

@@ -1,12 +1,12 @@
 .wrapper {
   display: flex;
-  height: min-content;
-  width: min-content;
 
   border-radius: 26px;
   background: #1E1E1E;
   padding: 16px;
   gap: 27px;
+
+  margin-bottom: 35px;
 }
 
 .leftSection {
@@ -131,6 +131,7 @@
 
 .rightSection {
   height: 100%;
+  width: 100%;
 
   gap: 14px;
 
@@ -156,6 +157,7 @@
 .cardDescriptionBlock {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 
   letter-spacing: 1px;
   font-family: NeueMachina-Regular, serif;
@@ -164,7 +166,7 @@
   background: #181818;
   border-radius: 19px;
   height: 126px;
-  width: 484px;
+  width: 100%;
   padding: 16px 12px;
 }
 

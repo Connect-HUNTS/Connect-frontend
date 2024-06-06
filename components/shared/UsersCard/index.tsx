@@ -24,6 +24,8 @@ interface UsersCardProps {
   country: string;
   links: { type: string; url: string }[];
   type: string[];
+  keyCases?: string[];
+  backgroundColors?: [string, string, string, string, string];
 }
 
 const UsersCard: React.FC<UsersCardProps> = ({
@@ -86,7 +88,7 @@ const UsersCard: React.FC<UsersCardProps> = ({
         />
         <LinksSection
           title="Email"
-          link={`mailto:${emailLink}`}
+          link={emailLink}
           icon={<MdOutlineLocalPostOffice className="icon" />}
           iconClicked={iconClicked.email}
           handleIconClick={() => handleIconClick("email")}
