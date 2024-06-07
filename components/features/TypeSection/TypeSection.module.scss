@@ -2,11 +2,12 @@
   display: flex;
   align-content: center;
   align-items: flex-start;
+  box-sizing: border-box;
 
   letter-spacing: 1px;
   background: #181818;
   padding: 16px 12px;
-  width: 484px;
+  width: 100%;
   border-radius: 19px;
   gap: 24px;
 }

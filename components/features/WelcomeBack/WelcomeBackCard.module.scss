@@ -1,12 +1,18 @@
+.wrapper {
+  margin-top: 41px;
+  margin-bottom: 56px;
+}
+
 .usercardTitle {
   display: flex;
   flex-direction: column;
-  
+
   font-size: 22px;
   font-weight: 400;
   font-family: NeueMachina-Regular, serif;
   letter-spacing: 1px;
   gap: 16px;
+
 }
 
 .welcomeBack {

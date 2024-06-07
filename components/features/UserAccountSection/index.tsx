@@ -2,17 +2,14 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import s from "./UserAccountSection.module.scss";
 
-import Settings from "/public/images/settingUser.png";
-import Chat from "/public/images/chatUser.png";
-import Bell from "/public/images/userNotification.png";
-
 interface Partner {
   id: number;
   name: string;
+  type: string[];
 }
 
 interface UserAccountSectionProps {
-  partners: { name: string }[];
+  partner: Partner; // Изменяем на один объект партнера
   investorIcon: StaticImageData;
   settingsIcon: StaticImageData;
   chatIcon: StaticImageData;
@@ -20,7 +17,7 @@ interface UserAccountSectionProps {
 }
 
 const UserAccountSection: React.FC<UserAccountSectionProps> = ({
-  partners,
+  partner,
   investorIcon,
   settingsIcon,
   chatIcon,
@@ -36,21 +33,25 @@ const UserAccountSection: React.FC<UserAccountSectionProps> = ({
         />
         <div className={s.rightSection}>
           <div className={s.center}>
-            {partners.map((item, index) => (
-              <h4 className={s.userName} key={index}>
-                {item.name}
-              </h4>
-            ))}
-            <p className={s.userType}>Investor</p>
+            <h4 className={s.userName}>{partner.name}</h4>
+            <p className={s.userType}>{partner.type}</p>
           </div>
           <div className={s.userIcons}>
-            <Image src={Settings} className={s.userNameIcons} alt="settings" />
-            <Image src={Chat} className={s.userNameIcons} alt="user chat" />
+            <Image
+              src={settingsIcon}
+              className={s.userNameIcons}
+              alt="settings"
+            />
+            <Image src={chatIcon} className={s.userNameIcons} alt="user chat" />
           </div>
         </div>
       </div>
       <div className={s.bellUser}>
-        <Image className={s.notifications} src={Bell} alt="notification" />
+        <Image
+          className={s.notifications}
+          src={notificationIcon}
+          alt="notification"
+        />
       </div>
     </div>
   );
