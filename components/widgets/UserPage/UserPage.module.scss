@@ -1,4 +1,5 @@
 .wrapper {
+  width: 100%;
   display: flex;
   box-sizing: border-box;
 
@@ -6,13 +7,12 @@
   background: #161616;
 }
 
-.sidebar__section {
+.sidebarSection {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   background: #1E1E1E;
-  width: 236px;
   padding: 28px 36px;
 }
 
@@ -39,6 +39,22 @@
   }
 }
 
+.cardSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  gap: 32px;
+}
+
+.cardRightSection {
+  //padding-right: 48px;
+}
+
 .icon {
   width: 26px;
   height: 26px;
@@ -49,7 +65,14 @@
   flex-direction: row;
 }
 
-.cardHeader {
+.userCardSection {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.cardLeftSection {
   display: flex;
   justify-content: space-between;
+  height: 100%;
 }

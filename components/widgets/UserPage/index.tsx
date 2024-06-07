@@ -93,7 +93,7 @@ const UserPage: React.FC = () => {
 
   return (
     <div className={s.wrapper}>
-      <div className={s.sidebar__section}>
+      <div className={s.sidebarSection}>
         <div className={s.header}>
           <UserInteraction />
         </div>
@@ -102,11 +102,35 @@ const UserPage: React.FC = () => {
           Exit
         </Link>
       </div>
-      <div className={s.card__section}>
+      <div className={s.cardSection}>
         {cardData.map((partner) => (
-          <div key={partner.id}>
-            <div className={s.cardHeader}>
-              <WelcomeBackCard cardData={[partner]} />
+          <div className={s.content} key={partner.id}>
+            <div className={s.cardLeftSection}>
+              <div className={s.userCardSection}>
+                <WelcomeBackCard cardData={[partner]} />
+                <UsersCard
+                  name={partner.name}
+                  imageSrc={partner.logo}
+                  websiteLink={partner.websiteLink}
+                  emailLink={partner.contactEmail}
+                  proposals={partner.proposals}
+                  description={partner.description}
+                  contacts={partner.contacts}
+                  country={partner.country}
+                  keyCases={partner.keyCases}
+                  type={partner.type}
+                  links={partner.links}
+                  backgroundColors={[
+                    "#B4AAF1",
+                    "#AAE4F1",
+                    "#C1F1AA",
+                    "#F1E9AA",
+                    "#F1AAAA",
+                  ]}
+                />
+              </div>
+            </div>
+            <div className={s.cardRightSection}>
               <UserAccountSection
                 partner={partner}
                 investorIcon={investorIcon as StaticImageData}
@@ -114,32 +138,11 @@ const UserPage: React.FC = () => {
                 chatIcon={Chat as StaticImageData}
                 notificationIcon={Bell as StaticImageData}
               />
+              <FiltersSection />
             </div>
-
-            <UsersCard
-              name={partner.name}
-              imageSrc={partner.logo}
-              websiteLink={partner.websiteLink}
-              emailLink={partner.contactEmail}
-              proposals={partner.proposals}
-              description={partner.description}
-              contacts={partner.contacts}
-              country={partner.country}
-              keyCases={partner.keyCases}
-              type={partner.type}
-              links={partner.links}
-              backgroundColors={[
-                "#B4AAF1",
-                "#AAE4F1",
-                "#C1F1AA",
-                "#F1E9AA",
-                "#F1AAAA",
-              ]}
-            />
           </div>
         ))}
       </div>
-      <FiltersSection />
     </div>
   );
 };

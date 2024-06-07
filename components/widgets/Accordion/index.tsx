@@ -16,17 +16,15 @@ interface AccordionProps {
 }
 
 const Accordion: React.FC<AccordionProps> = ({ data }) => {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState<number | null>(null);
 
-  const toggle = (i) => {
-    if (selected === i) {
-      setSelected(null);
-    } else {
-      setSelected(i);
-    }
+  const toggle = (i: number) => {
+    setSelected((prevSelected) => (prevSelected === i ? null : i));
   };
 
-  const handleCheckboxClick = (e) => {
+  const handleCheckboxClick = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
     e.stopPropagation();
   };
 
@@ -35,19 +33,16 @@ const Accordion: React.FC<AccordionProps> = ({ data }) => {
       <div className={s.accordion}>
         {data.map((dataItem, index) => (
           <div className={s.item} key={index}>
-            <div
-              className={`${s.title} ${selected === index ? s.hide : " "}`}
-              onClick={() => toggle(index)}
-            >
+            <div className={s.title} onClick={() => toggle(index)}>
               <h2>{dataItem.title}</h2>
-              <Image src={downArrow} alt="arrow down" />
+              <Image
+                src={selected === index ? upArrow : downArrow}
+                alt="arrow"
+              />
             </div>
-            <div
-              className={`${s.content} ${selected === index ? s.show : s.hide}`}
-              onClick={() => toggle(index)}
-            >
+            <div className={`${s.content} ${selected === index ? s.show : ""}`}>
               <div className={s.contentTitle}>
-                <h2>{selected === index ? dataItem.title : " "}</h2>
+                <h2>{dataItem.title}</h2>
                 <Image src={upArrow} alt="arrow up" />
               </div>
               <BlueCheckbox onClick={handleCheckboxClick} />

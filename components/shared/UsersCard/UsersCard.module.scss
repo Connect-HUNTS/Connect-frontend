@@ -1,5 +1,6 @@
 .wrapper {
   display: flex;
+  box-sizing: border-box;
 
   border-radius: 26px;
   background: #1E1E1E;
@@ -122,6 +123,7 @@
 }
 
 .leftSection {
+
   height: 100%;
   width: 100%;
 
@@ -166,7 +168,6 @@
   background: #181818;
   border-radius: 19px;
   height: 126px;
-  width: 100%;
   padding: 16px 12px;
 }
 

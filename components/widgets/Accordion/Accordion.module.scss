@@ -36,11 +36,9 @@
 }
 
 .content {
-  background: #292929;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 1s ease;
-
+    background: #292929;
+    max-height: 0;
+    overflow: hidden;
 
   &.show {
     height: auto;
