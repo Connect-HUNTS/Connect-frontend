@@ -15,11 +15,12 @@ const ProposalsSection: React.FC<ProposalsSectionProps> = ({ proposals }) => {
         Proposals
       </h4>
       <ul className={s.proposalListSection}>
-        {proposals.map((item, index) => (
-          <li key={index} className={s.proposalList}>
-            {item}
-          </li>
-        ))}
+        {Array.isArray(proposals) &&
+          proposals.map((item, index) => (
+            <li key={index} className={s.proposalList}>
+              {item}
+            </li>
+          ))}
       </ul>
     </div>
   );

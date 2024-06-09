@@ -31,11 +31,11 @@ interface CardData {
   logo: string;
   websiteLink: string;
   contactEmail: string;
-  proposals: string[];
+  proposals?: string[];
   description: string;
   contacts: string[];
   country: string;
-  keyCases: string[];
+  keyCases?: string[];
   type: string[];
   links: { type: string; url: string }[];
 }
@@ -109,24 +109,19 @@ const UserPage: React.FC = () => {
               <div className={s.userCardSection}>
                 <WelcomeBackCard cardData={[partner]} />
                 <UsersCard
-                  name={partner.name}
-                  imageSrc={partner.logo}
-                  websiteLink={partner.websiteLink}
-                  emailLink={partner.contactEmail}
-                  proposals={partner.proposals}
-                  description={partner.description}
-                  contacts={partner.contacts}
-                  country={partner.country}
-                  keyCases={partner.keyCases}
-                  type={partner.type}
-                  links={partner.links}
-                  backgroundColors={[
-                    "#B4AAF1",
-                    "#AAE4F1",
-                    "#C1F1AA",
-                    "#F1E9AA",
-                    "#F1AAAA",
-                  ]}
+                  userCard={{
+                    name: partner.name,
+                    imageSrc: partner.logo,
+                    websiteLink: partner.websiteLink,
+                    emailLink: partner.contactEmail,
+                    proposals: partner.proposals,
+                    description: partner.description,
+                    contacts: partner.contacts,
+                    country: partner.country,
+                    keyCases: partner.keyCases,
+                    type: partner.type,
+                    links: partner.links,
+                  }}
                 />
               </div>
             </div>

@@ -1,37 +1,35 @@
-"use client";
+import s from "./DefaultUserCard.module.scss";
 
-import React, { useState } from "react";
-import s from "./UsersCard.module.scss";
-import Image from "next/image";
-import dots from "/public/images/dots.png";
-
-import { AiOutlineVideoCamera, AiOutlineLink } from "react-icons/ai";
+import React, { FC, useState } from "react";
+import { defaultCardTypes } from "../../../types/defaultCardTypes";
+import LinksSection from "../../features/LinksSection";
+import { AiOutlineLink, AiOutlineVideoCamera } from "react-icons/ai";
 import { MdOutlineLocalPostOffice } from "react-icons/md";
 import { PiChatText, PiPencilSimpleLineDuotone } from "react-icons/pi";
+import Image from "next/image";
+import dots from "../../../public/images/dots.png";
 import TypeSection from "../../features/TypeSection";
-import ProposalsSection from "../../features/ProposalSection";
+import CardItem from "../CardItem";
+import cardItem from "../CardItem";
 import ContactsSection from "../../features/ContactsSection";
-import LinksSection from "../../features/LinksSection";
-import { UserCardTypes } from "../../../types/userCardTypes";
 
-interface UsersCardProps {
-  userCard: UserCardTypes;
+interface defaultCardProps {
+  defaultCard: defaultCardTypes;
 }
 
-const UsersCard: React.FC<UsersCardProps> = ({
-  userCard: {
+const DefaultUserCard: FC<defaultCardProps> = ({ defaultCard }) => {
+  const {
     name,
     imageSrc,
     websiteLink,
     emailLink,
     description,
-    proposals,
     contacts,
     country,
     links,
     type,
-  },
-}) => {
+  } = defaultCard;
+
   const [copied, setCopied] = useState(false);
   const [iconClicked, setIconClicked] = useState<{
     email: boolean;
@@ -66,7 +64,6 @@ const UsersCard: React.FC<UsersCardProps> = ({
       setIconClicked((prev) => ({ ...prev, [type]: false }));
     }, 1000);
   };
-
   return (
     <div className={s.wrapper}>
       <div className={s.leftSection}>
@@ -100,19 +97,47 @@ const UsersCard: React.FC<UsersCardProps> = ({
           <h4 className={s.rightSectionHeader_title}>{name}</h4>
           <Image src={dots} alt="dots" />
         </div>
-        <div className={s.cardDescriptionBlock}>
-          <h4 className={s.descriptionHeader}>
+        <div className={s.description}>
+          <h4 className={s.descriptionTitle}>
             <PiPencilSimpleLineDuotone className="icon" />
             Description
           </h4>
           <p className={s.cardDescription}>{description}</p>
         </div>
         <TypeSection type={type} backgroundColors={backgroundColors} />
-        <ProposalsSection proposals={proposals} />
+        <div className={s.itemsSection}>
+          <CardItem
+            title={cardItem.name}
+            description={cardItem.name}
+            imageSrc={""}
+          />
+          <CardItem
+            title={cardItem.name}
+            description={cardItem.name}
+            imageSrc={""}
+          />
+        </div>
+        <div className={s.itemsSection}>
+          <CardItem
+            title={cardItem.name}
+            description={cardItem.name}
+            imageSrc={""}
+          />
+          <CardItem
+            title={defaultCard.cardItems.fundingRound}
+            description={cardItem.name}
+            imageSrc={""}
+          />
+        </div>
+        <CardItem
+          title={cardItem.name}
+          description={cardItem.name}
+          imageSrc={""}
+        />
         <ContactsSection contacts={contacts} country={country} links={links} />
       </div>
     </div>
   );
 };
 
-export default UsersCard;
+export default DefaultUserCard;

@@ -26,11 +26,12 @@ const ContactsSection: React.FC<ContactsSectionProps> = ({
           Contacts
         </h4>
         <ul className={s.contactsList}>
-          {contacts.map((item, index) => (
-            <li key={index} className={s.contactsListSection}>
-              {item}
-            </li>
-          ))}
+          {Array.isArray(contacts) &&
+            contacts.map((item, index) => (
+              <li key={index} className={s.contactsListSection}>
+                {item}
+              </li>
+            ))}
         </ul>
       </div>
       <div className={s.rightContactsSection}>
@@ -47,14 +48,17 @@ const ContactsSection: React.FC<ContactsSectionProps> = ({
             Social
           </span>
           <div className={s.socialIcons}>
-            {links.map((item, index) => (
-              <React.Fragment key={index}>
-                {item.type === "linkedin" && (
-                  <AiOutlineLinkedin className={s.icons} />
-                )}
-                {item.type === "telegram" && <BsTelegram className={s.icons} />}
-              </React.Fragment>
-            ))}
+            {Array.isArray(links) &&
+              links.map((item, index) => (
+                <React.Fragment key={index}>
+                  {item.type === "linkedin" && (
+                    <AiOutlineLinkedin className={s.icons} />
+                  )}
+                  {item.type === "telegram" && (
+                    <BsTelegram className={s.icons} />
+                  )}
+                </React.Fragment>
+              ))}
           </div>
         </div>
       </div>
