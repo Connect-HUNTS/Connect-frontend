@@ -19,18 +19,20 @@ const TypeSection: React.FC<TypeSectionProps> = ({
         Type
       </h4>
       <div className={s.spanSection}>
-        {type.map((typeItem, index) => (
-          <span
-            key={index}
-            className={s.typeSpan}
-            style={{
-              background:
-                backgroundColors[index % backgroundColors.length] || "#FFFFFF",
-            }}
-          >
-            {typeItem}
-          </span>
-        ))}
+        {Array.isArray(type) &&
+          type.map((typeItem, index) => (
+            <span
+              key={index}
+              className={s.typeSpan}
+              style={{
+                background:
+                  backgroundColors[index % backgroundColors.length] ||
+                  "#FFFFFF",
+              }}
+            >
+              {typeItem}
+            </span>
+          ))}
       </div>
     </div>
   );
