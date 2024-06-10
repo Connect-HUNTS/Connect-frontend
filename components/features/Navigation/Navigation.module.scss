@@ -1,48 +1,47 @@
-.headerSection {
+.wrapper {
   display: flex;
   flex-direction: column;
 
-  height: 28px;
+  height: 100%;
   gap: 12px;
   padding: 0 8px;
 }
 
-.logoLink {
+.logo {
   display: flex;
   gap: 12px;
+
+  margin-bottom: 56px;
 
   text-decoration: none;
 }
 
-.logo {
+.logoImage {
   width: 26px;
   height: 26px;
 }
 
-.headerTitle {
-  font-family: NeueMachina-Regular, serif;
+.logoTitle {
+  font-family: Outfit-Regular, serif;
   letter-spacing: 1px;
   font-size: 22px;
 }
 
-.main {
+.nav {
   display: flex;
   flex-direction: column;
-  padding-top: 56px;
-
 }
 
-.subtitle {
+.navTitle {
+  padding-left: 12px;
+  margin-bottom: 20px;
+
   font-size: 10px;
   font-weight: 400;
 
   font-family: NeueMachina-Regular, serif;
 
   color: #BFBFBF;
-
-  letter-spacing: 1px;
-
-  padding-left: 12px;
 }
 
 .btnList {
@@ -56,12 +55,18 @@
 
 }
 
-.navButton {
+.logout {
+  margin-top: auto;
+
+  width: 100%;
+  height: 38px;
+
   display: flex;
   align-items: center;
 
-  width: 158px;
-  height: 38px;
+  background: transparent;
+  cursor: pointer;
+
   gap: 12px;
   color: #A0A0A0;
   text-decoration: none;
@@ -73,31 +78,12 @@
   border-radius: 10px;
   transition: color 0.3s ease, background 0.3s ease;
 
+  svg {
+    width: 19px;
+    height: 19px;
+  }
+
   &:hover {
     color: #9747FF;
-    background: #2d2b2b;
   }
-}
-
-.formsButton {
-  display: flex;
-  align-items: center;
-
-  width: 158px;
-  height: 38px;
-  gap: 12px;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 6px 8px;
-  letter-spacing: 1px;
-  font-family: NeueMachina-Regular, serif;
-  border-radius: 10px;
-  background: linear-gradient(120deg, #7331FF, #B454FF);
-}
-
-.icon {
-  width: 26px;
-  height: 26px;
 }
