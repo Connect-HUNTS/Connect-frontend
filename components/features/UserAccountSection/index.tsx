@@ -2,13 +2,13 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import s from "./UserAccountSection.module.scss";
 
-interface Partner {
+export interface Partner {
   id: number;
   name: string;
   type: string[];
 }
 
-interface UserAccountSectionProps {
+export interface UserAccountSectionProps {
   partner: Partner; // Изменяем на один объект партнера
   investorIcon: StaticImageData;
   settingsIcon: StaticImageData;

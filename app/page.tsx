@@ -8,6 +8,7 @@ import globe from "/public/images/animatedGlobe.gif";
 import Image from "next/image";
 import CustomCursor from "../components/shared/customCursor";
 import Footer from "../components/widgets/Footer";
+import DefaultCard from "components/entities/UserCard/ui/DefaultCard/DefaultCard";
 
 export default function Home() {
   return (

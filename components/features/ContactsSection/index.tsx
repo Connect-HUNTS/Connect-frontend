@@ -10,7 +10,7 @@ import s from "./ContactsSection.module.scss";
 interface ContactsSectionProps {
   contacts: string[];
   country: string;
-  links: { type: string; url: string }[];
+  links?: { type: string; url: string }[];
 }
 
 const ContactsSection: React.FC<ContactsSectionProps> = ({
