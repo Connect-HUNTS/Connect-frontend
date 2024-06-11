@@ -1,3 +1,5 @@
+import "./Layout.scss"
+
 import { ReactNode } from "react"
 
 import Navigation from "components/features/Navigation"

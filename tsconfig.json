@@ -24,6 +24,7 @@
       "types/*": ["./types/*"],
       "components/*": ["./components/*"],
       "public/*": ["./public/*"],
+      "context/*": ["./context/*"],
     },
     "plugins": [
       {

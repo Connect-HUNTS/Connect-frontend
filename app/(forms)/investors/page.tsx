@@ -1,5 +1,8 @@
+import s from "./UserPage.module.scss"
+
 import axios from "axios"
-import s from "components/widgets/UserPage/UserPage.module.scss"
+import { FormsProvider } from "contexts/FormsContext"
+import Header from "components/features/Header"
 
 const token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJpbnZlc3RvckBleGFtcGxlLmNvbSIsInJvbGUiOiJJTlZFU1RPUiIsImlhdCI6MTcxNzYwMzEzNiwiZXhwIjoxNzIwMTk1MTM2fQ.9q-YC36KKI3h6G6Z76BZMtKS2OHYpDuyK8ViAzP0VXQ"
@@ -20,52 +23,42 @@ const getPartners = async () => {
     }
 }
 
-const userPage = async () => {
+const InvestorsPage = async () => {
     return (
-        <div className={s.wrapper}>
-            {/*<div className={s.sidebarSection}>*/}
-            {/*    <div className={s.header}>*/}
-            {/*        <UserInteraction />*/}
-            {/*    </div>*/}
-            {/*</div>*/}
-            {/*<div className={s.cardSection}>*/}
-            {/*    <WelcomeBackCard />*/}
-            {/*    {partners.map((partner: any) => (*/}
-            {/*        <div className={s.content} key={partner.id}>*/}
-            {/*            <div className={s.cardLeftSection}>*/}
-            {/*                <div className={s.userCardSection}>*/}
-            {/*                    <UsersCard*/}
-            {/*                        userCard={{*/}
-            {/*                            name: partner.name,*/}
-            {/*                            imageSrc: partner.logo,*/}
-            {/*                            websiteLink: partner.websiteLink,*/}
-            {/*                            emailLink: partner.contactEmail,*/}
-            {/*                            proposals: partner.proposals,*/}
-            {/*                            description: partner.description,*/}
-            {/*                            contacts: partner.contacts,*/}
-            {/*                            country: partner.country,*/}
-            {/*                            keyCases: partner.keyCases,*/}
-            {/*                            type: partner.type,*/}
-            {/*                            links: partner.links,*/}
-            {/*                        }}*/}
-            {/*                    />*/}
-            {/*                </div>*/}
-            {/*            </div>*/}
-            {/*            <div className={s.cardRightSection}>*/}
-            {/*                <UserAccountSection*/}
-            {/*                  partner={partner}*/}
-            {/*                  investorIcon={investorIcon as StaticImageData}*/}
-            {/*                  settingsIcon={Settings as StaticImageData}*/}
-            {/*                  chatIcon={Chat as StaticImageData}*/}
-            {/*                  notificationIcon={Bell as StaticImageData}*/}
-            {/*                />*/}
-            {/*                <FiltersSection />*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    ))}*/}
-            {/*</div>*/}
-        </div>
+        <FormsProvider>
+            <div className={s.wrapper}>
+                <Header />
+                {/*<div className={s.cardSection}>*/}
+                {/*    {partners.map((partner: any) => (*/}
+                {/*        <div className={s.content} key={partner.id}>*/}
+                {/*            <div className={s.cardLeftSection}>*/}
+                {/*                <div className={s.userCardSection}>*/}
+                {/*                    <UsersCard*/}
+                {/*                        userCard={{*/}
+                {/*                            name: partner.name,*/}
+                {/*                            imageSrc: partner.logo,*/}
+                {/*                            websiteLink: partner.websiteLink,*/}
+                {/*                            emailLink: partner.contactEmail,*/}
+                {/*                            proposals: partner.proposals,*/}
+                {/*                            description: partner.description,*/}
+                {/*                            contacts: partner.contacts,*/}
+                {/*                            country: partner.country,*/}
+                {/*                            keyCases: partner.keyCases,*/}
+                {/*                            type: partner.type,*/}
+                {/*                            links: partner.links,*/}
+                {/*                        }}*/}
+                {/*                    />*/}
+                {/*                </div>*/}
+                {/*            </div>*/}
+                {/*            <div className={s.cardRightSection}>*/}
+                {/*                <FiltersSection />*/}
+                {/*            </div>*/}
+                {/*        </div>*/}
+                {/*    ))}*/}
+                {/*</div>*/}
+            </div>
+        </FormsProvider>
     )
 }
 
-export default userPage
+export default InvestorsPage
