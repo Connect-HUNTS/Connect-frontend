@@ -28,6 +28,7 @@ import WelcomeBack from "components/features/WelcomeBack";
 import ReusableCard from "components/features/cards/ReusableCard";
 import TicketCard from "components/features/cards/TicketCard";
 import InfoCard from "components/features/cards/InfoCard";
+import FiltersSection from "components/features/FiltersSection";
 
 const token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJpbnZlc3RvckBleGFtcGxlLmNvbSIsInJvbGUiOiJJTlZFU1RPUiIsImlhdCI6MTcxNzYwMzEzNiwiZXhwIjoxNzIwMTk1MTM2fQ.9q-YC36KKI3h6G6Z76BZMtKS2OHYpDuyK8ViAzP0VXQ";
@@ -157,6 +158,7 @@ const InvestorCard = () => {
                   country={investor.country}
                 />
               </div>
+              <FiltersSection />
             </div>
           </div>
         );
