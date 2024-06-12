@@ -3,9 +3,9 @@ import s from "./InfoCard.module.scss";
 import Image from "next/image";
 
 interface ReusableCardProps {
-  iconSrc: string;
-  title: string;
-  description: string | number;
+  iconSrc?: string;
+  title?: string;
+  description?: string | number;
 }
 
 const InfoCard: React.FC<ReusableCardProps> = ({

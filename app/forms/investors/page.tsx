@@ -1,11 +1,13 @@
 import axios from "axios";
 import s from "components/widgets/UserPage/UserPage.module.scss";
 import InvestorCard from "components/entities/UserCard/ui/InvestorCard/InvestorCard";
+import { FC } from "react";
+import { InvestorType } from "types/InvestorTypes";
 
 const token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJpbnZlc3RvckBleGFtcGxlLmNvbSIsInJvbGUiOiJJTlZFU1RPUiIsImlhdCI6MTcxNzYwMzEzNiwiZXhwIjoxNzIwMTk1MTM2fQ.9q-YC36KKI3h6G6Z76BZMtKS2OHYpDuyK8ViAzP0VXQ";
 
-const getPartners = async () => {
+const getInvestors = async () => {
   try {
     const response = await axios.get(
       "http://104.207.130.38:3000/api/users/investors?limit=10&offset=0&sortBy=name&sortOrder=asc",
@@ -21,10 +23,16 @@ const getPartners = async () => {
   }
 };
 
-const userPage = () => {
+interface UserPageProps {
+  types: InvestorType[];
+}
+
+const userPage: FC<UserPageProps> = async ({ types }) => {
+  const investors = await getInvestors();
+
   return (
     <div className={s.wrapper}>
-      <InvestorCard />
+      <InvestorCard investors={investors} key={investors.id} />
       {/*<div className={s.sidebarSection}>*/}
       {/*    <div className={s.header}>*/}
       {/*        <UserInteraction />*/}

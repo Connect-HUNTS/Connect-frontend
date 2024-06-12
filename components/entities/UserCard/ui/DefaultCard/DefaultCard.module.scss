@@ -1,12 +1,17 @@
 .wrapper {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   gap: 14px;
 }
 
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
 .cardImage {
-  width: 250px;
-  height: 250px;
+  width: 19.74vw;
+  height: 27.45vh;
 
   border-radius: 25px;
   background: gray;
@@ -51,4 +56,16 @@
   letter-spacing: 1px;
   gap: 8px;
   cursor: pointer;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }

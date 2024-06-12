@@ -1,16 +1,22 @@
-import React, { FC, useState } from "react";
+import React, { FC, ReactNode, useState } from "react";
 import s from "./DefaultCard.module.scss";
 import LinksSection from "components/features/LinksSection";
 import { AiOutlineLink, AiOutlineVideoCamera } from "react-icons/ai";
 import { MdOutlineLocalPostOffice } from "react-icons/md";
 import { PiChatText } from "react-icons/pi";
 import { defaultCardTypes } from "types/defaultCardTypes";
+import InfoCard from "components/features/cards/InfoCard";
+import descriptionImage from "public/icons/pencilIcon.png";
+import TypeSection from "components/features/TypeSection";
+import dotsIcon from "public/images/dots.png";
+import CardItem from "components/features/cards/CardItem";
 
 interface defaultCardProps {
   defaultCard: defaultCardTypes;
+  children: ReactNode;
 }
 
-const DefaultCard: FC<defaultCardProps> = ({ defaultCard }) => {
+const DefaultCard: FC<defaultCardProps> = ({ defaultCard, children }) => {
   const {
     name,
     imageSrc,
@@ -59,33 +65,54 @@ const DefaultCard: FC<defaultCardProps> = ({ defaultCard }) => {
 
   return (
     <div className={s.wrapper}>
-      <img
-        className={s.cardImage}
-        src={imageSrc ?? "/public/images/defaultImage.png"}
-        alt="Logo"
-      />
-      <LinksSection
-        title="Website"
-        link={websiteLink}
-        icon={<AiOutlineLink className="icon" />}
-        iconClicked={iconClicked.website}
-        handleIconClick={() => handleIconClick("website")}
-      />
-      <LinksSection
-        title="Email"
-        link={emailLink}
-        icon={<MdOutlineLocalPostOffice className="icon" />}
-        iconClicked={iconClicked.email}
-        handleIconClick={() => handleIconClick("email")}
-      />
-      <div className={s.buttonsSection}>
-        <button className={s.messageButton}>
-          <PiChatText className="icon" /> Send a message
-        </button>
-        <button className={s.meetingButton}>
-          <AiOutlineVideoCamera className="icon" />
-          Make a meeting
-        </button>
+      <div className={s.left}>
+        <img
+          className={s.cardImage}
+          src={imageSrc ?? "/public/images/defaultImage.png"}
+          alt="Logo"
+        />
+        <LinksSection
+          title="Website"
+          link={websiteLink}
+          icon={<AiOutlineLink className="icon" />}
+          iconClicked={iconClicked.website}
+          handleIconClick={() => handleIconClick("website")}
+        />
+        <LinksSection
+          title="Email"
+          link={emailLink}
+          icon={<MdOutlineLocalPostOffice className="icon" />}
+          iconClicked={iconClicked.email}
+          handleIconClick={() => handleIconClick("email")}
+        />
+        <div className={s.buttonsSection}>
+          <button className={s.messageButton}>
+            <PiChatText className="icon" /> Send a message
+          </button>
+          <button className={s.meetingButton}>
+            <AiOutlineVideoCamera className="icon" />
+            Make a meeting
+          </button>
+        </div>
+      </div>
+      <div className={s.right}>
+        <CardItem title={defaultCard.name} iconSrc={dotsIcon} />
+        <InfoCard
+          iconSrc={descriptionImage}
+          title="Description"
+          description={defaultCard.description}
+        />
+        <TypeSection
+          type={[defaultCard.type]}
+          backgroundColors={[
+            "#B4AAF1",
+            "#AAE4F1",
+            "#C1F1AA",
+            "#F1E9AA",
+            "#F1AAAA",
+          ]}
+        />
+        {children}
       </div>
     </div>
   );
