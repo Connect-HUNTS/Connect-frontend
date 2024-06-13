@@ -9,7 +9,7 @@ import Accordion from "components/widgets/Accordion";
 
 const FiltersSection = () => {
   return (
-    <section className={s.wrapper}>
+    <div className={s.wrapper}>
       <div className={s.header}>
         <div className={s.left}>
           <Image src={filterIcon} alt="filter icon" className={s.icon} />
@@ -29,7 +29,7 @@ const FiltersSection = () => {
       <Accordion title="Price">
         <p>asd</p>
       </Accordion>
-    </section>
+    </div>
   );
 };
 

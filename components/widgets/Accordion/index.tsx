@@ -17,8 +17,8 @@ const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
   };
 
   return (
-    <div className={s.accordion}>
-      <div className={s.item}>
+    <div>
+      <div className={`${s.item} ${open ? s.open : ""}`}>
         <div className={`${s.title} ${open ? s.open : ""}`} onClick={toggle}>
           <h2>{title}</h2>
           <IoIosArrowDown

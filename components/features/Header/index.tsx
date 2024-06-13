@@ -5,13 +5,13 @@ import UserAccountSection from "../UserAccountSection";
 
 const Header = () => {
   return (
-    <div className={s.wrapper}>
+    <section className={s.wrapper}>
       <div>
         <h4 className={s.title}>Hi LouchLTD,</h4>
         <p className={s.prescription}>WELCOME BACK!</p>
       </div>
       <UserAccountSection />
-    </div>
+    </section>
   );
 };
 

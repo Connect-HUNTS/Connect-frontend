@@ -18,12 +18,12 @@ const DynamicInvestors = dynamic(
 const InvestorsPage = () => {
   return (
     <FormsProvider>
-      <div className={s.wrapper}>
-        <section className={s.content}>
+      <section className={s.wrapper}>
+        <div className={s.content}>
           <DynamicInvestors />
-        </section>
+        </div>
         <FiltersSection />
-      </div>
+      </section>
     </FormsProvider>
   );
 };

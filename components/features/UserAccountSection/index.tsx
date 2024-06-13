@@ -3,10 +3,10 @@ import s from "./UserAccountSection.module.scss";
 import React from "react";
 import Image from "next/image";
 
+import { GoBell, GoGear } from "react-icons/go";
+import { BiMessageDetail } from "react-icons/bi";
+
 import investorIcon from "/public/images/investorIcon.png";
-import settingsIcon from "/public/images/settingUser.png";
-import chatIcon from "/public/images/chatUser.png";
-import notificationIcon from "/public/images/userNotification.png";
 
 const UserAccountSection: React.FC = () => {
   return (
@@ -23,11 +23,11 @@ const UserAccountSection: React.FC = () => {
             <p className={s.userType}>Investor</p>
           </div>
         </div>
-        <Image src={settingsIcon} className={s.icon} alt="settings" />
-        <Image src={chatIcon} className={s.icon} alt="user chat" />
+        <GoGear className={s.icon} />
+        <BiMessageDetail className={s.icon} />
       </div>
       <div className={s.notificationsWrapper}>
-        <Image className={s.icon} src={notificationIcon} alt="notification" />
+        <GoBell className={s.icon} />
         <span className={s.counter}>3</span>
       </div>
     </div>
