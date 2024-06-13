@@ -43,8 +43,8 @@
 .icon {
   color: #A0A0A0;
 
-  width: 1.523vw;
-  height: 1.523vw;
+  width: 1.29vw;
+  height: 1.29vw;
 
   cursor: pointer;
   transition: color 0.2s ease-in;
@@ -52,6 +52,11 @@
   &:hover {
     color: #FFFFFF;
   }
+}
+
+.bell {
+  width: 1.523vw;
+  height: 1.523vw;
 }
 
 .notificationsWrapper {
