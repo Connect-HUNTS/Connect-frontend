@@ -3,25 +3,29 @@
 import React, { useState } from "react";
 import s from "./Accordion.module.scss";
 
-import downArrow from "../../../public/icons/arrow-down.png";
-import upArrow from "../../../public/icons/arrow-up.png";
+import downArrow from "public/icons/arrow-down.png";
+import upArrow from "public/icons/arrow-up.png";
+import BlueCheckbox from "components/features/checkboxes/BlueCheckbox";
 import Image from "next/image";
-import BlueCheckbox from "../../features/checkboxes/BlueCheckbox";
 
 interface AccordionItem {
   title: string;
-  content: string;
+  type?: "asc" | "desc";
 }
 
 interface AccordionProps {
-  data: AccordionItem[];
+  data: {
+    title: string;
+    items: AccordionItem[];
+  };
+  onCheckboxClick: (filter: string, type?: "asc" | "desc") => void;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ data }) => {
-  const [selected, setSelected] = useState<number | null>(null);
+const Accordion: React.FC<AccordionProps> = ({ data, onCheckboxClick }) => {
+  const [open, setOpen] = useState<boolean>(false);
 
-  const toggle = (i: number) => {
-    setSelected((prevSelected) => (prevSelected === i ? null : i));
+  const toggle = () => {
+    setOpen(!open);
   };
 
   const handleCheckboxClick = (
@@ -32,25 +36,18 @@ const Accordion: React.FC<AccordionProps> = ({ data }) => {
 
   return (
     <div className={s.wrapper}>
-      <div className={s.accordion}>
-        {data.map((dataItem, index) => (
-          <div className={s.item} key={index}>
-            <div className={s.title} onClick={() => toggle(index)}>
-              <h2>{dataItem.title}</h2>
-              <Image
-                src={selected === index ? upArrow : downArrow}
-                alt="arrow"
-              />
-            </div>
-            <div className={`${s.content} ${selected === index ? s.show : ""}`}>
-              <div className={s.contentTitle}>
-                <h2>{dataItem.title}</h2>
-                <Image src={upArrow} alt="arrow up" />
-              </div>
-              <BlueCheckbox onClick={handleCheckboxClick} />
-              <BlueCheckbox onClick={handleCheckboxClick} />
-              <BlueCheckbox onClick={handleCheckboxClick} />
-            </div>
+      <div className={s.title} onClick={toggle}>
+        <h2>{data.title}</h2>
+        <Image src={open ? upArrow : downArrow} alt="arrow" />
+      </div>
+      <div className={s.content}>
+        {data.items.map(({ title, type }, index) => (
+          <div>
+            <BlueCheckbox
+              onClick={() => onCheckboxClick(title, type)}
+              key={index}
+            />
+            <p>{title}</p>
           </div>
         ))}
       </div>

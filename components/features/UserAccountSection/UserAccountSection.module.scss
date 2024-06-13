@@ -11,8 +11,10 @@
 
   border-radius: 0.625vw;
   background: #1E1E1E;
+  box-shadow: 0 2px 8.8px 0 rgba(18, 18, 18, 0.15);
+  
   padding: 0.625vw;
-  height: 2.344vw;
+  height: 2.636vw;
 
   gap: 0.833vw;
 }
@@ -39,8 +41,8 @@
 }
 
 .icon {
-  width: 1.198vw;
-  height: 1.198vw;
+  width: 1.523vw;
+  height: 1.523vw;
 
   cursor: pointer;
 }
@@ -52,8 +54,8 @@
   justify-content: center;
   align-items: center;
 
-  width: 2.344vw;
-  height: 2.344vw;
+  width: 2.636vw;
+  height: 2.636vw;
   background: #292929;
   border-radius: 50%;
 

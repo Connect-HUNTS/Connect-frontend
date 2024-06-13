@@ -1,44 +1,45 @@
 import s from "./FiltersSection.module.scss";
-import filterIcon from "../../../public/icons/filter-icon.svg";
-import Image from "next/image";
 import React from "react";
-import Accordion from "../../widgets/Accordion";
+
+import Image from "next/image";
+
+import filterIcon from "public/icons/filter-icon.svg";
+
+import Accordion from "components/widgets/Accordion";
 
 const testData = [
   {
     title: "Round",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+    items: [],
   },
   {
     title: "Types",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+    items: [],
   },
   {
     title: "Valuation",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+    items: [],
   },
   {
     title: "Price",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+    items: [],
   },
 ];
 
 const FiltersSection = () => {
   return (
-    <div className={s.wrapper}>
-      <div className={s.filtersHeader}>
-        <div className={s.filterSection}>
-          <Image src={filterIcon} alt="filter icon" />
-          <h4 className={s.header}>Filters</h4>
+    <section className={s.wrapper}>
+      <div className={s.header}>
+        <div className={s.left}>
+          <Image src={filterIcon} alt="filter icon" className={s.icon} />
+          <h4 className={s.title}>Filters</h4>
         </div>
-        <p className={s.clearSection}>Clear all</p>
+        <button className={s.clearBtn}>Clear all</button>
       </div>
-      <Accordion data={testData} />
-    </div>
+      {testData.map((accordion) => (
+        <Accordion data={accordion} key={accordion.title} />
+      ))}
+    </section>
   );
 };
 
