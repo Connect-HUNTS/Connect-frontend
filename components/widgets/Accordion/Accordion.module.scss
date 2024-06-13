@@ -3,7 +3,6 @@
   width: 100%;
   height: 100%;
   justify-content: center;
-
 }
 
 .accordion {
@@ -11,20 +10,41 @@
 }
 
 .item {
-  background: #1E1E1E ;
+  background: #1e1e1e;
   margin-bottom: 14px;
 }
 
 .title {
   display: flex;
   align-items: center;
-
   height: 38px;
-  gap: 6px;
+  gap: 0.351vw;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 400;
   padding: 0 12px;
+  background: #1e1e1e;
+
+  font-size: 1.265vh;
+  font-weight: 400;
+  letter-spacing: 0.0694vw;
+  font-family: NeueMachina-Regular, serif;
+  
+  &.open {
+    background: #292929;
+    border-radius: 12px 12px 0 0;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  .arrow {
+    transition: transform 0.3s ease;
+    width: 0.82vw;
+    height: 0.82vw;
+  }
 }
 
 .hide {
@@ -36,22 +56,21 @@
 }
 
 .content {
-    background: #292929;
-    max-height: 0;
-    overflow: hidden;
+  background: #292929;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
 
   &.show {
-    height: auto;
     max-height: 9999px;
     padding: 16px 12px;
-    border-radius: 12px;
+    border-radius: 0 0 12px 12px;
   }
 }
 
 .contentTitle {
   display: flex;
   align-items: center;
-
   gap: 6px;
   height: auto;
   max-height: 9999px;

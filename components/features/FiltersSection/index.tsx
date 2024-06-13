@@ -7,25 +7,6 @@ import filterIcon from "public/icons/filter-icon.svg";
 
 import Accordion from "components/widgets/Accordion";
 
-const testData = [
-  {
-    title: "Round",
-    items: [],
-  },
-  {
-    title: "Types",
-    items: [],
-  },
-  {
-    title: "Valuation",
-    items: [],
-  },
-  {
-    title: "Price",
-    items: [],
-  },
-];
-
 const FiltersSection = () => {
   return (
     <section className={s.wrapper}>
@@ -36,9 +17,18 @@ const FiltersSection = () => {
         </div>
         <button className={s.clearBtn}>Clear all</button>
       </div>
-      {testData.map((accordion) => (
-        <Accordion data={accordion} key={accordion.title} />
-      ))}
+      <Accordion title="Round">
+        <p>asd</p>
+      </Accordion>
+      <Accordion title="Type">
+        <p>asd</p>
+      </Accordion>
+      <Accordion title="Valuation">
+        <p>asd</p>
+      </Accordion>
+      <Accordion title="Price">
+        <p>asd</p>
+      </Accordion>
     </section>
   );
 };

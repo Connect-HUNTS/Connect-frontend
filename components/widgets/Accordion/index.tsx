@@ -1,55 +1,34 @@
 "use client";
 
-import React, { useState } from "react";
 import s from "./Accordion.module.scss";
-
-import downArrow from "public/icons/arrow-down.png";
-import upArrow from "public/icons/arrow-up.png";
-import BlueCheckbox from "components/features/checkboxes/BlueCheckbox";
-import Image from "next/image";
-
-interface AccordionItem {
-  title: string;
-  type?: "asc" | "desc";
-}
+import React, { ReactNode, useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
 
 interface AccordionProps {
-  data: {
-    title: string;
-    items: AccordionItem[];
-  };
-  onCheckboxClick: (filter: string, type?: "asc" | "desc") => void;
+  title: string;
+  children: ReactNode;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ data, onCheckboxClick }) => {
+const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const toggle = () => {
     setOpen(!open);
   };
 
-  const handleCheckboxClick = (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-  ) => {
-    e.stopPropagation();
-  };
-
   return (
-    <div className={s.wrapper}>
-      <div className={s.title} onClick={toggle}>
-        <h2>{data.title}</h2>
-        <Image src={open ? upArrow : downArrow} alt="arrow" />
-      </div>
-      <div className={s.content}>
-        {data.items.map(({ title, type }, index) => (
-          <div>
-            <BlueCheckbox
-              onClick={() => onCheckboxClick(title, type)}
-              key={index}
-            />
-            <p>{title}</p>
-          </div>
-        ))}
+    <div className={s.accordion}>
+      <div className={s.item}>
+        <div className={`${s.title} ${open ? s.open : ""}`} onClick={toggle}>
+          <h2>{title}</h2>
+          <IoIosArrowDown
+            className={s.arrow}
+            style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+          />
+        </div>
+        <div className={`${s.content} ${open ? s.show : s.hide}`}>
+          {children}
+        </div>
       </div>
     </div>
   );
