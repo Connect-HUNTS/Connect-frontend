@@ -26,6 +26,7 @@ const DefaultCard: FC<defaultCardProps> = ({ defaultCard, children }) => {
     contacts,
     country,
     links,
+    type,
   } = defaultCard;
 
   const [copied, setCopied] = useState(false);
@@ -36,14 +37,6 @@ const DefaultCard: FC<defaultCardProps> = ({ defaultCard, children }) => {
     email: false,
     website: false,
   });
-
-  const backgroundColors = [
-    "#B4AAF1",
-    "#AAE4F1",
-    "#C1F1AA",
-    "#F1E9AA",
-    "#F1AAAA",
-  ];
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -96,14 +89,14 @@ const DefaultCard: FC<defaultCardProps> = ({ defaultCard, children }) => {
         </div>
       </div>
       <div className={s.right}>
-        <CardItem title={defaultCard.name} iconSrc={dotsIcon} />
+        <CardItem title={name} iconSrc={dotsIcon} />
         <InfoCard
           iconSrc={descriptionImage}
           title="Description"
-          description={defaultCard.description}
+          description={description}
         />
         <TypeSection
-          type={[defaultCard.type]}
+          type={type}
           backgroundColors={[
             "#B4AAF1",
             "#AAE4F1",

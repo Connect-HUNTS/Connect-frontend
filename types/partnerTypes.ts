@@ -10,7 +10,10 @@ export interface DefaultInstance {
   profileImage: string;
 }
 
-export interface StartupType extends DefaultInstance {
-  tgeDate: null;
-  fundingRound: string;
+export interface PartnersType extends DefaultInstance {
+  telegram: string;
+  linkedin: string;
+  proposals: string[];
+  contactEmail: string;
+  keyCases: string[];
 }

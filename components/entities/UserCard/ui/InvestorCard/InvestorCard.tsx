@@ -11,11 +11,11 @@ import investorIcon from "public/images/investorIcon.png";
 import settingsIcon from "public/images/settingUser.png";
 import chatIcon from "public/images/chatUser.png";
 import notificationIcon from "public/images/userNotification.png";
-import minTicketImage from "public/icons/startupIcons/arrow-down-icon.png";
-import maxTicketImage from "public/icons/startupIcons/arrow-up-icon.png";
-import leadInvestorImage from "public/icons/startupIcons/medal-icon.png";
-import raiseTyperImage from "public/icons/startupIcons/raise-type-icon.png";
-import fundingRoundImage from "public/icons/startupIcons/calendar-icon.png";
+import minTicketImage from "public/icons/investorIcons/arrow-down-icon.png";
+import maxTicketImage from "public/icons/investorIcons/arrow-up-icon.png";
+import leadInvestorImage from "public/icons/investorIcons/medal-icon.png";
+import raiseTyperImage from "public/icons/investorIcons/raise-type-icon.png";
+import fundingRoundImage from "public/icons/investorIcons/calendar-icon.png";
 import UserAccountSection, {
   UserAccountSectionProps,
 } from "components/features/UserAccountSection";
@@ -32,15 +32,19 @@ const InvestorCard = ({ investors }) => {
           description: investor.description,
           contacts: [investor.contactInformation],
           country: investor.country,
-          links: [{ type: "website", url: investor.website }],
-          type: [investor.investorType],
+          links: [
+            { type: "website", url: investor.website },
+            { type: "telegram", url: investor.telegram },
+            { type: "linkedin", url: investor.linkedin },
+          ],
+          type: investor.investorType,
         };
 
         const userAccountSectionProps: UserAccountSectionProps = {
           partner: {
             id: investor.id,
             name: investor.name,
-            type: [investor.investorType],
+            type: investor.investorType,
           },
           investorIcon: investorIcon,
           settingsIcon: settingsIcon,
@@ -50,10 +54,6 @@ const InvestorCard = ({ investors }) => {
 
         return (
           <div key={investor.id} className={s.container}>
-            {/*<div className={s.header}>*/}
-            {/*  <WelcomeBack name={investor.name} />*/}
-            {/*  <UserAccountSection {...userAccountSectionProps} />*/}
-            {/*</div>*/}
             <div className={s.infoSection}>
               <DefaultCard defaultCard={defaultCardData}>
                 <div className={s.cardInfo}>
@@ -89,6 +89,7 @@ const InvestorCard = ({ investors }) => {
                   <ContactsSection
                     contacts={[investor.contactInformation]}
                     country={investor.country}
+                    links={defaultCardData.links}
                   />
                 </div>
               </DefaultCard>

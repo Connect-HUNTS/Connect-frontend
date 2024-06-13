@@ -1,5 +1,5 @@
 .wrapper {
-  height: 100vh;
+  height: 100%;
   display: flex;
   gap: 14px;
 }
@@ -10,8 +10,8 @@
 }
 
 .cardImage {
-  width: 19.74vw;
-  height: 27.45vh;
+  width: 250px;
+  height: 250px;
 
   border-radius: 25px;
   background: gray;

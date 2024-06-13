@@ -1,4 +1,3 @@
-// ContactsSection.tsx
 import React from "react";
 import { SlNotebook } from "react-icons/sl";
 import { FiUser } from "react-icons/fi";
@@ -52,10 +51,22 @@ const ContactsSection: React.FC<ContactsSectionProps> = ({
               links.map((item, index) => (
                 <React.Fragment key={index}>
                   {item.type === "linkedin" && (
-                    <AiOutlineLinkedin className={s.icons} />
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <AiOutlineLinkedin className={s.icons} />
+                    </a>
                   )}
                   {item.type === "telegram" && (
-                    <BsTelegram className={s.icons} />
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <BsTelegram className={s.icons} />
+                    </a>
                   )}
                 </React.Fragment>
               ))}

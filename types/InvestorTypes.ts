@@ -11,14 +11,10 @@ export interface DefaultInstance {
 }
 
 export interface InvestorType extends DefaultInstance {
-  investorType: string;
+  investorType: string[];
   investmentType: string;
   fundingRound: string;
   minTicketSize: number;
   maxTicketSize: number;
   leadInvestor: string;
 }
-
-export interface StartupType extends DefaultInstance {}
-
-export interface PartnersType extends DefaultInstance {}

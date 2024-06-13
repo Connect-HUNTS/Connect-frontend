@@ -1,15 +1,15 @@
 import React, { FC } from "react";
 import axios from "axios";
-import { StartupType } from "types/startupTypes";
-import StartupCard from "components/entities/UserCard/ui/StartupCard/StartupCard";
+import { PartnersType } from "types/partnerTypes";
+import PartnersCard from "components/entities/UserCard/ui/PartnersCard";
 
 const token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJpbnZlc3RvckBleGFtcGxlLmNvbSIsInJvbGUiOiJJTlZFU1RPUiIsImlhdCI6MTcxNzYwMzEzNiwiZXhwIjoxNzIwMTk1MTM2fQ.9q-YC36KKI3h6G6Z76BZMtKS2OHYpDuyK8ViAzP0VXQ";
 
-const getStartups = async () => {
+const getPartners = async () => {
   try {
     const response = await axios.get(
-      "http://104.207.130.38:3000/api/users/startups?limit=10&offset=0&sortBy=name&sortOrder=asc",
+      "http://104.207.130.38:3000/api/users/partners?limit=10&offset=0&sortBy=name&sortOrder=asc",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -22,17 +22,17 @@ const getStartups = async () => {
   }
 };
 
-interface StartupPageProps {
-  types: StartupType[];
+interface PartnersPageProps {
+  types: PartnersType[];
 }
 
-const startupPage: FC<StartupPageProps> = async () => {
-  const startUp = await getStartups();
+const PartnersPage: FC<PartnersPageProps> = async ({ types }) => {
+  const partners = await getPartners();
   return (
     <div>
-      <StartupCard startups={startUp} key={startUp.id} />
+      <PartnersCard partners={partners} key={partners.id} />
     </div>
   );
 };
 
-export default startupPage;
+export default PartnersPage;
