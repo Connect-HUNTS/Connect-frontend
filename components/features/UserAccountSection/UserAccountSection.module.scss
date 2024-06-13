@@ -12,7 +12,7 @@
   border-radius: 0.625vw;
   background: #1E1E1E;
   box-shadow: 0 2px 8.8px 0 rgba(18, 18, 18, 0.15);
-  
+
   padding: 0.625vw;
   height: 2.636vw;
 
@@ -41,10 +41,17 @@
 }
 
 .icon {
+  color: #A0A0A0;
+
   width: 1.523vw;
   height: 1.523vw;
 
   cursor: pointer;
+  transition: color 0.2s ease-in;
+
+  &:hover {
+    color: #FFFFFF;
+  }
 }
 
 .notificationsWrapper {
