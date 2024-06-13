@@ -1,56 +1,34 @@
-import React, { useState } from "react";
+"use client";
+
 import s from "./Accordion.module.scss";
-
-import downArrow from "../../../public/icons/arrow-down.png";
-import upArrow from "../../../public/icons/arrow-up.png";
-import Image from "next/image";
-import BlueCheckbox from "../../features/checkboxes/BlueCheckbox";
-
-interface AccordionItem {
-  title: string;
-  content: string;
-}
+import React, { ReactNode, useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
 
 interface AccordionProps {
-  data: AccordionItem[];
+  title: string;
+  children: ReactNode;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ data }) => {
-  const [selected, setSelected] = useState<number | null>(null);
+const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
+  const [open, setOpen] = useState<boolean>(false);
 
-  const toggle = (i: number) => {
-    setSelected((prevSelected) => (prevSelected === i ? null : i));
-  };
-
-  const handleCheckboxClick = (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-  ) => {
-    e.stopPropagation();
+  const toggle = () => {
+    setOpen(!open);
   };
 
   return (
-    <div className={s.wrapper}>
-      <div className={s.accordion}>
-        {data.map((dataItem, index) => (
-          <div className={s.item} key={index}>
-            <div className={s.title} onClick={() => toggle(index)}>
-              <h2>{dataItem.title}</h2>
-              <Image
-                src={selected === index ? upArrow : downArrow}
-                alt="arrow"
-              />
-            </div>
-            <div className={`${s.content} ${selected === index ? s.show : ""}`}>
-              <div className={s.contentTitle}>
-                <h2>{dataItem.title}</h2>
-                <Image src={upArrow} alt="arrow up" />
-              </div>
-              <BlueCheckbox onClick={handleCheckboxClick} />
-              <BlueCheckbox onClick={handleCheckboxClick} />
-              <BlueCheckbox onClick={handleCheckboxClick} />
-            </div>
-          </div>
-        ))}
+    <div className={s.accordion}>
+      <div className={s.item}>
+        <div className={`${s.title} ${open ? s.open : ""}`} onClick={toggle}>
+          <h2>{title}</h2>
+          <IoIosArrowDown
+            className={s.arrow}
+            style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+          />
+        </div>
+        <div className={`${s.content} ${open ? s.show : s.hide}`}>
+          {children}
+        </div>
       </div>
     </div>
   );

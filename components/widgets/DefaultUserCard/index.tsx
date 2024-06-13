@@ -67,7 +67,11 @@ const DefaultUserCard: FC<defaultCardProps> = ({ defaultCard }) => {
   return (
     <div className={s.wrapper}>
       <div className={s.leftSection}>
-        <img className={s.cardImage} src={imageSrc} alt="Logo" />
+        <img
+          className={s.cardImage}
+          src={imageSrc ?? "/public/images/defaultImage.png"}
+          alt="Logo"
+        />
         <LinksSection
           title="Website"
           link={websiteLink}
@@ -124,7 +128,7 @@ const DefaultUserCard: FC<defaultCardProps> = ({ defaultCard }) => {
             imageSrc={""}
           />
           <CardItem
-            title={defaultCard.cardItems.fundingRound}
+            title={defaultCard.cardItems?.fundingRound}
             description={cardItem.name}
             imageSrc={""}
           />

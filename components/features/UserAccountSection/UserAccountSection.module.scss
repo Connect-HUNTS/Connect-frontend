@@ -1,66 +1,82 @@
 .wrapper {
   display: flex;
-  gap: 35px;
-  margin-top: 41px;
-  margin-bottom: 83px;
-  width: 300px;
+  align-items: center;
+  gap: 1.8229vw;
+  height: fit-content;
 }
 
-.userAccount {
+.userAccountWrapper {
   display: flex;
   align-items: center;
 
-  border-radius: 12px;
+  border-radius: 0.625vw;
   background: #1E1E1E;
-  padding: 12px;
-  height: 45px;
+  box-shadow: 0 2px 8.8px 0 rgba(18, 18, 18, 0.15);
+  
+  padding: 0.625vw;
+  height: 2.636vw;
 
-}
-
-.rightSection {
-  display: flex;
-}
-
-.center {
-  display: flex;
-  flex-direction: column;
-  padding: 0 10px;
-}
-
-.userName {
-  font-size: 12px;
-  font-weight: 500;
-  font-family: NeueMachina-Regular, serif;
-  letter-spacing: 1px;
-}
-
-.userType {
-  font-size: 8px;
-  font-weight: 400;
-  font-family: NeueMachina-Regular, serif;
-  letter-spacing: 1px;
-  color: #A0A0A0;
-}
-
-.userIcons {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.bellUser {
-  height: 45px;
-  width: 45px;
-  padding-right: 10px;
+  gap: 0.833vw;
 }
 
 .userNameIcons {
   cursor: pointer;
+  width: 1.563vw;
+  height: 1.563vw;
 }
 
-.notifications {
-  padding: 15px;
+.userName {
+  font-size: 1.1vh;
+  font-weight: 500;
+  font-family: NeueMachina-Regular, serif;
+  letter-spacing: 0.05vw;
+}
+
+.userType {
+  font-size: 0.8vh;
+  font-weight: 400;
+  font-family: NeueMachina-Regular, serif;
+  letter-spacing: 0.05vw;
+  color: #A0A0A0;
+}
+
+.icon {
+  width: 1.523vw;
+  height: 1.523vw;
+
   cursor: pointer;
+}
+
+.notificationsWrapper {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 2.636vw;
+  height: 2.636vw;
   background: #292929;
   border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.counter {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 0.677vw;
+  height: 0.67vw;
+  background: rgba(255, 98, 49, 1);
+  border-radius: 50%;
+
+  font-family: NeueMachina-Regular, serif;
+  font-size: 0.8vh;
+  font-weight: 500;
 }

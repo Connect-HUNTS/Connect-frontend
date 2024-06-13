@@ -70,7 +70,11 @@ const UsersCard: React.FC<UsersCardProps> = ({
   return (
     <div className={s.wrapper}>
       <div className={s.leftSection}>
-        <img className={s.cardImage} src={imageSrc} alt="Logo" />
+        <img
+          className={s.cardImage}
+          src={imageSrc ?? "/public/images/defaultImage.png"}
+          alt="Logo"
+        />
         <LinksSection
           title="Website"
           link={websiteLink}
