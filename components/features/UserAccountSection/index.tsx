@@ -27,7 +27,7 @@ const UserAccountSection: React.FC = () => {
         <BiMessageDetail className={s.icon} />
       </div>
       <div className={s.notificationsWrapper}>
-        <GoBell className={s.icon} />
+        <GoBell className={[s.icon, s.bell].join(" ")} />
         <span className={s.counter}>3</span>
       </div>
     </div>
