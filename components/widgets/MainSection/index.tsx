@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import s from "./MainSection.module.scss";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 function MainSection() {
   const words = [
@@ -21,6 +21,12 @@ function MainSection() {
     "EVENTS",
   ];
   const [animatedWordIndex, setAnimatedWordIndex] = useState(0);
+
+  const router = useRouter();
+
+  const redirectToHref = () => {
+    return router.push("sign-up");
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -63,9 +69,9 @@ function MainSection() {
           <br /> businesses and end users into an ecosystem of early stage
           investments.
         </p>
-        <Link href="/investors">
-          <button className={s.getStartedBtn}>GET STARTED</button>
-        </Link>
+        <button className={s.getStartedBtn} onClick={redirectToHref}>
+          GET STARTED
+        </button>
       </div>
     </div>
   );
