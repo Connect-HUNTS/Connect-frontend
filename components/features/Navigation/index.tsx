@@ -12,6 +12,7 @@ import { LuLogOut, LuSettings2 } from "react-icons/lu";
 import { FaPeopleGroup, FaRocket, FaUserTie } from "react-icons/fa6";
 
 import { NavButton } from "components/shared/NavButton";
+import { signOut } from "@/auth";
 
 const Navigation = () => {
   return (
@@ -50,10 +51,18 @@ const Navigation = () => {
             </div>
           </div>
         </div>
-        <Link className={s.logout} href="/">
-          <LuLogOut className="icon" />
-          Exit
-        </Link>
+        <form
+          className={s.logoutForm}
+          action={async () => {
+            "use server";
+            await signOut();
+          }}
+        >
+          <button className={s.logout}>
+            <LuLogOut className="icon" />
+            Exit
+          </button>
+        </form>
       </div>
     </nav>
   );

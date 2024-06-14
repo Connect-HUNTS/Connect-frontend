@@ -20,6 +20,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./*"],
       "app/*": ["./app/*"],
       "types/*": ["./types/*"],
       "components/*": ["./components/*"],
