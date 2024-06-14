@@ -29,7 +29,7 @@ const StartupCard = ({ startups }) => {
             { type: "telegram", url: startup.telegram },
             { type: "linkedin", url: startup.linkedin },
           ],
-          type: startup.investorType,
+          type: startup.type,
         };
 
         return (
@@ -47,26 +47,6 @@ const StartupCard = ({ startups }) => {
                       iconSrc={dateTGEImage}
                       title="Date TGE"
                       description={startup.tgeDate}
-                    />
-                  </div>
-                  <div className={s.blocks}>
-                    <ReusableCard
-                      iconSrc={vestingImage}
-                      title="Vesting"
-                      description={""}
-                    />
-                    <ReusableCard
-                      iconSrc={tgeImage}
-                      title="TGE"
-                      description={""}
-                    />
-                  </div>
-
-                  <div style={{ width: "50%" }}>
-                    <ReusableCard
-                      iconSrc={cliffImage}
-                      title="Cliff"
-                      description={""}
                     />
                   </div>
                   <ContactsSection

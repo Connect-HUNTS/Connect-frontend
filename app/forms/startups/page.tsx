@@ -26,7 +26,7 @@ interface StartupPageProps {
   types: StartupType[];
 }
 
-const startupPage: FC<StartupPageProps> = async () => {
+const startupPage: FC<StartupPageProps[]> = async (types) => {
   const startUp = await getStartups();
   return (
     <div>

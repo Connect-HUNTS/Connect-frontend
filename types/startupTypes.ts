@@ -13,4 +13,5 @@ export interface DefaultInstance {
 export interface StartupType extends DefaultInstance {
   tgeDate: null;
   fundingRound: string;
+  teamLinkedInProfiles: string[];
 }
