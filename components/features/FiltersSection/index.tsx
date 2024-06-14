@@ -1,43 +1,34 @@
 import s from "./FiltersSection.module.scss";
-import filterIcon from "../../../public/icons/filter-icon.svg";
-import Image from "next/image";
 import React from "react";
-import Accordion from "../../widgets/Accordion";
 
-const testData = [
-  {
-    title: "Round",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
-  },
-  {
-    title: "Types",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
-  },
-  {
-    title: "Valuation",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
-  },
-  {
-    title: "Price",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
-  },
-];
+import Image from "next/image";
+
+import filterIcon from "public/icons/filter-icon.svg";
+
+import Accordion from "components/widgets/Accordion";
 
 const FiltersSection = () => {
   return (
     <div className={s.wrapper}>
-      <div className={s.filtersHeader}>
-        <div className={s.filterSection}>
-          <Image src={filterIcon} alt="filter icon" />
-          <h4 className={s.header}>Filters</h4>
+      <div className={s.header}>
+        <div className={s.left}>
+          <Image src={filterIcon} alt="filter icon" className={s.icon} />
+          <h4 className={s.title}>Filters</h4>
         </div>
-        <p className={s.clearSection}>Clear all</p>
+        <button className={s.clearBtn}>Clear all</button>
       </div>
-      <Accordion data={testData} />
+      <Accordion title="Round">
+        <p>asd</p>
+      </Accordion>
+      <Accordion title="Type">
+        <p>asd</p>
+      </Accordion>
+      <Accordion title="Valuation">
+        <p>asd</p>
+      </Accordion>
+      <Accordion title="Price">
+        <p>asd</p>
+      </Accordion>
     </div>
   );
 };

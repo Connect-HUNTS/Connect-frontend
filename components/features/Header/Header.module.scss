@@ -1,0 +1,19 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 1.986vh;
+  font-weight: 400;
+  font-family: NeueMachina-Regular, serif;
+  letter-spacing: 0.05vw;
+}
+
+.prescription {
+  font-size: 3.25vh;
+  font-weight: 500;
+  font-family: NeueMachina-Regular, serif;
+  letter-spacing: 0.05vw;
+}
