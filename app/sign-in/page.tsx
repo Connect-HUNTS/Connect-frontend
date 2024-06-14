@@ -1,21 +1,19 @@
 "use client";
 
-import { signIn } from "next-auth/react";
+import { useFormState } from "react-dom";
+import { googleAuthenticate } from "@/lib/actions";
 
 export default function LoginForm() {
-  const handleGoogleSignIn = async () => {
-    await signIn("google");
-  };
+  const [errorMsgGoogle, dispatchGoogle] = useFormState(
+    googleAuthenticate,
+    undefined,
+  );
 
   return (
-    <div className="mt-4">
-      <button
-        type="button"
-        onClick={handleGoogleSignIn}
-        className="w-full bg-blue-500 text-white py-2 px-4 rounded-md"
-      >
-        Sign in with Google
-      </button>
+    <div>
+      <form action={dispatchGoogle}>
+        <button>Sign in with Google</button>
+      </form>
     </div>
   );
 }
