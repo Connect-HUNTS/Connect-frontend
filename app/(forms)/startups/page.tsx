@@ -11,8 +11,8 @@ const DynamicStartupsList = dynamic(
   },
 );
 
-const InvestorsPage = () => {
+const StartUpsPage = () => {
   return <DynamicStartupsList />;
 };
 
-export default InvestorsPage;
+export default StartUpsPage;
