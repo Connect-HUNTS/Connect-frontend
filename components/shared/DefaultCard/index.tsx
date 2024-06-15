@@ -66,7 +66,7 @@ const DefaultCard: FC<DefaultCardI> = ({ entity, children }) => {
               {entity.email}
               <FaRegCopy
                 className={s.copyIcon}
-                onClick={(e) => copyLink(e, entity.email)}
+                onClick={(e) => copyLink(e, entity.email as string)}
               />
             </a>
           ) : (
