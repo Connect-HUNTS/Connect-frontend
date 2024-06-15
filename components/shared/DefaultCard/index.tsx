@@ -1,19 +1,26 @@
 import s from "./DefaultCard.module.scss";
 
 import { FC, MouseEvent, ReactNode } from "react";
-import { DefaultInstance } from "types/InvestorTypes";
 
-import { AiOutlineLink } from "react-icons/ai";
+import { DefaultEntityType } from "@/types/DefaultEntityType";
+
+import { copyToClipboard } from "@/utils/copyToClipboard";
+
+import { AiOutlineLink, AiOutlineVideoCamera } from "react-icons/ai";
 import { IoMailOutline } from "react-icons/io5";
 import { PiPencilSimpleLineBold } from "react-icons/pi";
+import { BiMessageDetail } from "react-icons/bi";
+import { HiOutlineRectangleStack } from "react-icons/hi2";
 
 import { FaRegCopy } from "react-icons/fa6";
 
-import Container from "./ui/Container";
-import { copyToClipboard } from "@/utils/copyToClipboard";
+import Container from "components/shared/Container";
+
+import Types from "./ui/Types";
+import Contacts from "./ui/Contacts";
 
 interface DefaultCardI {
-  entity: DefaultInstance;
+  entity: DefaultEntityType;
   children: ReactNode;
 }
 
@@ -35,14 +42,14 @@ const DefaultCard: FC<DefaultCardI> = ({ entity, children }) => {
         <Container
           icon={<AiOutlineLink />}
           title="Website"
-          underline={!!entity.websiteLink}
+          underline={!!entity.website}
         >
-          {entity.websiteLink ? (
-            <a href={entity.websiteLink} target="_blank" className={s.website}>
-              {entity.websiteLink}
+          {entity.website ? (
+            <a href={entity.website} target="_blank" className={s.website}>
+              {entity.website}
               <FaRegCopy
                 className={s.copyIcon}
-                onClick={(e) => copyLink(e, entity.websiteLink)}
+                onClick={(e) => copyLink(e, entity.website)}
               />
             </a>
           ) : (
@@ -52,39 +59,43 @@ const DefaultCard: FC<DefaultCardI> = ({ entity, children }) => {
         <Container
           icon={<IoMailOutline />}
           title="Email"
-          underline={!!entity.contactEmail}
+          underline={!!entity.email}
         >
-          {entity.contactEmail ? (
-            <a href={`mailto:${entity.contactEmail}`} className={s.website}>
-              {entity.contactEmail}
+          {entity.email ? (
+            <a href={`mailto:${entity.email}`} className={s.website}>
+              {entity.email}
               <FaRegCopy
                 className={s.copyIcon}
-                onClick={(e) => copyLink(e, entity.contactEmail)}
+                onClick={(e) => copyLink(e, entity.email)}
               />
             </a>
           ) : (
             <p className={s.website}>Empty</p>
           )}
         </Container>
-        <div className={s.btnWrapper}></div>
+        <button className={[s.btn, s.messageBtn].join(" ")}>
+          <BiMessageDetail /> Send a message
+        </button>
+        <button className={[s.btn, s.meetingBtn].join(" ")}>
+          <AiOutlineVideoCamera /> Make a meeting
+        </button>
       </div>
       <div className={s.right}>
         <div className={s.title}>{entity.name}</div>
         <Container icon={<PiPencilSimpleLineBold />} title="Description">
-          {/*{entity.description}*/}
           <p className={s.description}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages.
+            {!!entity.description ? entity.description : "No description"}
           </p>
         </Container>
-        <div className={s.typesWrapper}></div>
+        <Container
+          icon={<HiOutlineRectangleStack />}
+          title="Types"
+          display="row"
+        >
+          <Types types={!!entity.type.length ? entity.type : ["No Types"]} />
+        </Container>
         {children}
-        <div className={s.contactWrapper}></div>
+        <Contacts entity={entity} />
       </div>
     </div>
   );

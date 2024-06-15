@@ -6,12 +6,25 @@ interface ContainerI {
   icon: ReactNode;
   title: string;
   children: ReactNode;
+  className?: string;
   underline?: boolean;
+  display?: "column" | "row";
 }
 
-const Container: FC<ContainerI> = ({ icon, title, underline, children }) => {
+const Container: FC<ContainerI> = ({
+  icon,
+  title,
+  underline,
+  className = "",
+  display = "column",
+  children,
+}) => {
   return (
-    <div className={s.wrapper}>
+    <div
+      className={[s.wrapper, display === "row" ? s.row : "", className].join(
+        " ",
+      )}
+    >
       <div className={s.header}>
         {icon}
         {title}

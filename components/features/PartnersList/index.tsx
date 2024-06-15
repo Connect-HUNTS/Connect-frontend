@@ -1,12 +1,13 @@
-import React, { FC } from "react";
 import axios from "axios";
-import { PartnersType } from "types/partnerTypes";
-import PartnersCard from "components/entities/UserCard/ui/PartnersCard";
+
+import ScrollContainer from "components/shared/ScrollContainer";
+
+import Card from "components/entities/investor/Card";
 
 const token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJpbnZlc3RvckBleGFtcGxlLmNvbSIsInJvbGUiOiJJTlZFU1RPUiIsImlhdCI6MTcxNzYwMzEzNiwiZXhwIjoxNzIwMTk1MTM2fQ.9q-YC36KKI3h6G6Z76BZMtKS2OHYpDuyK8ViAzP0VXQ";
 
-const getPartners = async () => {
+const getPartners = async (): Promise<any[]> => {
   try {
     const response = await axios.get(
       "http://104.207.130.38:3000/api/users/partners?limit=10&offset=0&sortBy=name&sortOrder=asc",
@@ -22,17 +23,16 @@ const getPartners = async () => {
   }
 };
 
-interface PartnersPageProps {
-  types: PartnersType[];
-}
+const Partners = async () => {
+  const investors = await getPartners();
 
-const PartnersPage: FC<PartnersPageProps> = async ({ types }) => {
-  const partners = await getPartners();
   return (
-    <div>
-      <PartnersCard partners={partners} key={partners.id} />
-    </div>
+    <ScrollContainer>
+      {investors.map((investor: any) => (
+        <Card investor={investor} key={investor.id} /> // change this component to Partner Card (also change the import)
+      ))}
+    </ScrollContainer>
   );
 };
 
-export default PartnersPage;
+export default Partners;

@@ -10,7 +10,7 @@ const token =
 const getPartners = async (): Promise<any[]> => {
   try {
     const response = await axios.get(
-      "http://104.207.130.38:3000/api/users/investors?limit=10&offset=0&sortBy=name&sortOrder=asc",
+      "http://104.207.130.38:3000/api/users/startups?limit=10&offset=0&sortBy=name&sortOrder=asc",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -23,7 +23,7 @@ const getPartners = async (): Promise<any[]> => {
   }
 };
 
-const Investors = async () => {
+const Startups = async () => {
   const investors = await getPartners();
 
   return (
@@ -35,4 +35,4 @@ const Investors = async () => {
   );
 };
 
-export default Investors;
+export default Startups;

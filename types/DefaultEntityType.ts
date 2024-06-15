@@ -1,4 +1,4 @@
-export interface DefaultInstance {
+export interface DefaultEntityType {
   id: number;
   userId: number;
   name: string;
@@ -8,12 +8,7 @@ export interface DefaultInstance {
   type: string[];
   description: string;
   profileImage: string;
-}
-
-export interface PartnersType extends DefaultInstance {
+  email: string;
   telegram: string;
   linkedin: string;
-  proposals: string[];
-  contactEmail: string;
-  keyCases: string[];
 }

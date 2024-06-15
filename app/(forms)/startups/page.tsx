@@ -4,15 +4,15 @@ import Loading from "components/shared/Loading";
 
 import dynamic from "next/dynamic";
 
-const DynamicInvestorsList = dynamic(
-  () => import("components/features/InvestorsList"),
+const DynamicStartupsList = dynamic(
+  () => import("components/features/StartupsList"),
   {
     loading: () => <Loading />,
   },
 );
 
 const InvestorsPage = () => {
-  return <DynamicInvestorsList />;
+  return <DynamicStartupsList />;
 };
 
 export default InvestorsPage;

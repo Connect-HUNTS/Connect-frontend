@@ -1,7 +1,15 @@
 .wrapper {
+  display: flex;
+  flex-direction: column;
+
   padding: 1.516vh 0.937vw;
   background: rgba(24, 24, 24, 1);
   border-radius: 1vw;
+}
+
+.row {
+  flex-direction: row;
+  gap: 1.406vw;
 }
 
 .header {
@@ -19,8 +27,12 @@
   gap: 0.313vw;
 
   svg {
-    width: 0.625vw;
+    width: 1.769vh;
   }
+}
+
+.row > .header {
+  margin-bottom: unset;
 }
 
 .underline {
