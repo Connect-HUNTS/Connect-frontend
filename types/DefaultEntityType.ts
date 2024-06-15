@@ -8,7 +8,7 @@ export interface DefaultEntityType {
   type: string[];
   description: string;
   profileImage: string;
-  email: string;
+  email: string | null;
   telegram: string;
   linkedin: string;
 }

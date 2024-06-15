@@ -9,8 +9,9 @@ import { RiDownloadLine } from "react-icons/ri";
 import { LuPieChart } from "react-icons/lu";
 import { MdOutlineCalendarMonth } from "react-icons/md";
 
+import MedalSVG from "components/shared/icons/MedalSVG";
+
 import Container from "components/shared/Container";
-import MedalSVG from "../../../shared/icons/MedalSVG";
 
 interface CardI {
   investor: InvestorType;
