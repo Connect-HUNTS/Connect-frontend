@@ -3,7 +3,8 @@ export interface DefaultInstance {
   userId: number;
   name: string;
   country: string;
-  website: string;
+  websiteLink: string;
+  contactEmail: string;
   contactInformation: string;
   type: string[];
   description: string;

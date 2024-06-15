@@ -1,0 +1,67 @@
+.wrapper {
+  width: 55.556vw;
+  padding: 0.937vw;
+
+  display: flex;
+  gap: 1.581vw;
+
+  border-radius: 1.354vw;
+
+  margin-bottom: 7.077vh;
+
+  background: rgba(30, 30, 30, 0.5);
+
+  box-shadow: -0.361vh 0.361vh 2.258vh 0 rgba(0, 0, 0, 0.25);
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.769vh;
+}
+
+.profileImage {
+  width: 17.361vw;
+  height: 17.361vw;
+}
+
+.copyIcon {
+  width: 0.521vw;
+}
+
+.website {
+  display: flex;
+  align-items: center;
+
+  gap: 0.417vw;
+
+  font-family: NeueMachina-Ultralight, serif;
+  font-size: 1.769vh;
+  font-weight: 400;
+  line-height: 1.769vh;
+  text-align: left;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.769vh;
+}
+
+.title {
+  font-family: NeueMachina-Regular, serif;
+  font-size: 2.78vh;
+  font-weight: 500;
+  line-height: 2.78vh;
+  text-align: left;
+}
+
+.description {
+  font-family: NeueMachina-Ultralight, serif;
+  font-size: 1.264vh;
+  font-weight: 300;
+  line-height: 1.264vh;
+  text-align: left;
+}

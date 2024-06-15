@@ -8,8 +8,8 @@ import { FormsProvider } from "contexts/FormsContext";
 import FiltersSection from "components/features/FiltersSection";
 import dynamic from "next/dynamic";
 
-const DynamicInvestors = dynamic(
-  () => import("components/entities/Investors"),
+const DynamicInvestorsList = dynamic(
+  () => import("components/features/InvestorsList"),
   {
     loading: () => <Loading />,
   },
@@ -20,7 +20,7 @@ const InvestorsPage = () => {
     <FormsProvider>
       <section className={s.wrapper}>
         <div className={s.content}>
-          <DynamicInvestors />
+          <DynamicInvestorsList />
         </div>
         <FiltersSection />
       </section>

@@ -1,5 +1,8 @@
 import axios from "axios";
-import ScrollContainer from "../../shared/ScrollContainer";
+
+import ScrollContainer from "components/shared/ScrollContainer";
+
+import Card from "components/entities/investor/Card";
 
 const token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJpbnZlc3RvckBleGFtcGxlLmNvbSIsInJvbGUiOiJJTlZFU1RPUiIsImlhdCI6MTcxNzYwMzEzNiwiZXhwIjoxNzIwMTk1MTM2fQ.9q-YC36KKI3h6G6Z76BZMtKS2OHYpDuyK8ViAzP0VXQ";
@@ -26,16 +29,7 @@ const Investors = async () => {
   return (
     <ScrollContainer>
       {investors.map((investor: any) => (
-        <p key={investor.id}>{investor.id}</p>
-      ))}
-      {investors.map((investor: any) => (
-        <p key={investor.id}>{investor.id}</p>
-      ))}
-      {investors.map((investor: any) => (
-        <p key={investor.id}>{investor.id}</p>
-      ))}
-      {investors.map((investor: any) => (
-        <p key={investor.id}>{investor.id}</p>
+        <Card investor={investor} key={investor.id} />
       ))}
     </ScrollContainer>
   );

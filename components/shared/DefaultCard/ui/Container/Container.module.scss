@@ -1,0 +1,28 @@
+.wrapper {
+  padding: 1.516vh 0.937vw;
+  background: rgba(24, 24, 24, 1);
+  border-radius: 1vw;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 1.769vh;
+
+  font-family: NeueMachina-Regular, serif;
+  font-size: 1.769vh;
+  font-weight: 400;
+  line-height: 1.769vh;
+  text-align: left;
+
+  gap: 0.313vw;
+
+  svg {
+    width: 0.625vw;
+  }
+}
+
+.underline {
+  text-decoration: underline;
+}
