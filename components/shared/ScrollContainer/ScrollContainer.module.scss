@@ -1,0 +1,11 @@
+.scrollableSection {
+  width: 100%;
+  height: 80vh;
+
+  overflow-y: auto;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
