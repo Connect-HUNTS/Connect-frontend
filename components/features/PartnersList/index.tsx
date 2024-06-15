@@ -2,7 +2,7 @@ import axios from "axios";
 
 import ScrollContainer from "components/shared/ScrollContainer";
 
-import Card from "components/entities/investor/Card";
+import Card from "components/entities/partner/Card";
 import { PartnersType } from "@/types/PartnerType";
 
 const token =
@@ -30,12 +30,12 @@ const getPartners = async (): Promise<PartnersType[]> => {
 };
 
 const Partners = async () => {
-  const investors = await getPartners();
+  const partners = await getPartners();
 
   return (
     <ScrollContainer>
-      {investors.map((investor: any) => (
-        <Card partner={investor} key={investor.id} /> // change this component to Partner Card (also change the import)
+      {partners.map((partner: any) => (
+        <Card partner={partner} key={partner.id} /> // change this component to Partner Card (also change the import)
       ))}
     </ScrollContainer>
   );
