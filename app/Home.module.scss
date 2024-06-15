@@ -44,9 +44,11 @@
 }
 
 .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
-  z-index: 1;
-  margin-top: 25px;
+  min-height: fit-content;
 }
 
 .main {

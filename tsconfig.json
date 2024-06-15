@@ -20,12 +20,10 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
       "app/*": ["./app/*"],
       "types/*": ["./types/*"],
       "components/*": ["./components/*"],
       "public/*": ["./public/*"],
-      "context/*": ["./context/*"],
     },
     "plugins": [
       {

@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import s from "./NavButton.module.scss";
-import React, { ReactNode } from "react";
+import s from "./NavButton.module.scss"
+import React, { ReactNode } from "react"
 
-import { usePathname, useRouter } from "next/navigation";
+import { redirect, usePathname } from "next/navigation"
 
 interface NavButton {
   title: string;
@@ -12,20 +12,19 @@ interface NavButton {
 }
 
 export const NavButton: React.FC<NavButton> = ({ title, href, icon }) => {
-  const path = usePathname();
-  const router = useRouter();
+    const path = usePathname()
 
-  const redirectToHref = () => {
-    return router.push(href);
-  };
+    const redirectToHref = () => {
+        return redirect(href)
+    }
 
-  return (
-    <button
-      className={[s.btn, path.includes(href) ? s.active : ""].join(" ")}
-      onClick={redirectToHref}
-    >
-      {icon}
-      {title}
-    </button>
-  );
-};
+    return (
+        <button
+            className={[s.btn, path.includes(href) ? s.active : ""].join(" ")}
+            onClick={redirectToHref}
+        >
+            {icon}
+            {title}
+        </button>
+    )
+}

@@ -1,34 +1,43 @@
 import s from "./FiltersSection.module.scss";
-
-import React from "react";
-
+import filterIcon from "../../../public/icons/filter-icon.svg";
 import Image from "next/image";
+import React from "react";
+import Accordion from "../../widgets/Accordion";
 
-import filterIcon from "public/icons/filter-icon.svg";
-import Accordion from "components/shared/Accordion";
+const testData = [
+  {
+    title: "Round",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+  },
+  {
+    title: "Types",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+  },
+  {
+    title: "Valuation",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+  },
+  {
+    title: "Price",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+  },
+];
 
 const FiltersSection = () => {
   return (
     <div className={s.wrapper}>
-      <div className={s.header}>
-        <div className={s.left}>
-          <Image src={filterIcon} alt="filter icon" className={s.icon} />
-          <h4 className={s.title}>Filters</h4>
+      <div className={s.filtersHeader}>
+        <div className={s.filterSection}>
+          <Image src={filterIcon} alt="filter icon" />
+          <h4 className={s.header}>Filters</h4>
         </div>
-        <button className={s.clearBtn}>Clear all</button>
+        <p className={s.clearSection}>Clear all</p>
       </div>
-      <Accordion title="Round">
-        <p>asd</p>
-      </Accordion>
-      <Accordion title="Type">
-        <p>asd</p>
-      </Accordion>
-      <Accordion title="Valuation">
-        <p>asd</p>
-      </Accordion>
-      <Accordion title="Price">
-        <p>asd</p>
-      </Accordion>
+      <Accordion data={testData} />
     </div>
   );
 };

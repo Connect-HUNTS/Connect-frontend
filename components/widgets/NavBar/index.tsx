@@ -8,15 +8,8 @@ import Link from "next/link";
 import Logo from "../../../public/images/Logo.png";
 
 import s from "./NavBar.module.scss";
-import { useRouter } from "next/navigation";
 
 const NavBar = () => {
-  const router = useRouter();
-
-  const redirectToHref = (href: string) => {
-    return router.push(href);
-  };
-
   return (
     <nav className={s.wrapper}>
       <Image src={Logo} alt="image logo" className={s.logo} />
@@ -28,18 +21,8 @@ const NavBar = () => {
         ))}
       </div>
       <div className={s.buttonsSection}>
-        <button
-          className={s.navButton}
-          onClick={() => redirectToHref("sign-in")}
-        >
-          Log In
-        </button>
-        <button
-          className={s.navButton}
-          onClick={() => redirectToHref("sign-up")}
-        >
-          Sign Up
-        </button>
+        <button className={s.navButton}>Log In</button>
+        <button className={s.navButton}>Sign Up</button>
       </div>
     </nav>
   );

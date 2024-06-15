@@ -1,37 +1,57 @@
+import React from "react";
+import Image, { StaticImageData } from "next/image";
 import s from "./UserAccountSection.module.scss";
 
-import React from "react";
+export interface Partner {
+  id: number;
+  name: string;
+  type: string[];
+}
 
-import { GoBell, GoGear } from "react-icons/go";
-import { BiMessageDetail } from "react-icons/bi";
+export interface UserAccountSectionProps {
+  partner: Partner; // Изменяем на один объект партнера
+  investorIcon: StaticImageData;
+  settingsIcon: StaticImageData;
+  chatIcon: StaticImageData;
+  notificationIcon: StaticImageData;
+}
 
-import investorIcon from "/public/images/investorIcon.png";
-
-import { useSession } from "next-auth/react";
-
-const UserAccountSection: React.FC = () => {
-  const { data } = useSession();
-
+const UserAccountSection: React.FC<UserAccountSectionProps> = ({
+  partner,
+  investorIcon,
+  settingsIcon,
+  chatIcon,
+  notificationIcon,
+}) => {
   return (
     <div className={s.wrapper}>
-      <div className={s.userAccountWrapper}>
-        <img
-          src={data?.user?.image ?? investorIcon.src}
+      <div className={s.userAccount}>
+        <Image
+          src={investorIcon}
           className={s.userNameIcons}
           alt="investor icon"
         />
         <div className={s.rightSection}>
           <div className={s.center}>
-            <h4 className={s.userName}>{data?.user?.name}</h4>
-            <p className={s.userType}>Investor</p>
+            <h4 className={s.userName}>{partner.name}</h4>
+            <p className={s.userType}>{partner.type}</p>
+          </div>
+          <div className={s.userIcons}>
+            <Image
+              src={settingsIcon}
+              className={s.userNameIcons}
+              alt="settings"
+            />
+            <Image src={chatIcon} className={s.userNameIcons} alt="user chat" />
           </div>
         </div>
-        <GoGear className={s.icon} />
-        <BiMessageDetail className={s.icon} />
       </div>
-      <div className={s.notificationsWrapper}>
-        <GoBell className={[s.icon, s.bell].join(" ")} />
-        <span className={s.counter}>3</span>
+      <div className={s.bellUser}>
+        <Image
+          className={s.notifications}
+          src={notificationIcon}
+          alt="notification"
+        />
       </div>
     </div>
   );
