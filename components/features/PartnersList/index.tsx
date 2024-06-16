@@ -18,6 +18,11 @@ const getPartners = async (): Promise<PartnersType[]> => {
         },
       },
     );
+
+    // If you see this, and you are asking yourself "Why previous dev wrote it?",
+    // just ask backend dev, why they did tree different user's objects,
+    // with different common keys (e.g. email, and website)
+
     const partners = response.data as PartnersType[];
     return partners.map((partner) => {
       partner.email = partner.contactEmail;

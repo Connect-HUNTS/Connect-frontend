@@ -20,6 +20,11 @@ const getStartups = async (): Promise<StartupType[]> => {
         },
       },
     );
+
+    // If you see this, and you are asking yourself "Why previous dev wrote it?",
+    // just ask backend dev, why they did tree different user's objects,
+    // with different common keys (e.g. email, and website)
+
     const startups = response.data as StartupType[];
     return startups.map((startup) => {
       startup.email = "";
