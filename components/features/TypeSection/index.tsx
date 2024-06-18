@@ -1,4 +1,3 @@
-// TypeSection.tsx
 import React from "react";
 import { HiOutlineRectangleStack } from "react-icons/hi2";
 import s from "./TypeSection.module.scss";

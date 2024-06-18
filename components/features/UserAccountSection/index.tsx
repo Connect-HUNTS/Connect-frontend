@@ -1,25 +1,28 @@
 import s from "./UserAccountSection.module.scss";
 
 import React from "react";
-import Image from "next/image";
 
 import { GoBell, GoGear } from "react-icons/go";
 import { BiMessageDetail } from "react-icons/bi";
 
 import investorIcon from "/public/images/investorIcon.png";
 
+import { useSession } from "next-auth/react";
+
 const UserAccountSection: React.FC = () => {
+  const { data } = useSession();
+
   return (
     <div className={s.wrapper}>
       <div className={s.userAccountWrapper}>
-        <Image
-          src={investorIcon}
+        <img
+          src={data?.user?.image ?? investorIcon.src}
           className={s.userNameIcons}
           alt="investor icon"
         />
         <div className={s.rightSection}>
           <div className={s.center}>
-            <h4 className={s.userName}>LouchLTD</h4>
+            <h4 className={s.userName}>{data?.user?.name}</h4>
             <p className={s.userType}>Investor</p>
           </div>
         </div>

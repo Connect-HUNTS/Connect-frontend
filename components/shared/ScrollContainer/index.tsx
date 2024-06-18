@@ -12,17 +12,17 @@ const ScrollContainer: FC<ScrollableContainerProps> = ({ children }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleWindowScroll = () => {
+    const handleWindowScroll = (event: WheelEvent) => {
       if (sectionRef.current) {
-        sectionRef.current.scrollTop += window.scrollY;
-        window.scrollTo(0, 0);
+        event.preventDefault();
+        sectionRef.current.scrollTop += event.deltaY;
       }
     };
 
-    window.addEventListener("scroll", handleWindowScroll);
+    window.addEventListener("wheel", handleWindowScroll, { passive: false });
 
     return () => {
-      window.removeEventListener("scroll", handleWindowScroll);
+      window.removeEventListener("wheel", handleWindowScroll);
     };
   }, []);
 

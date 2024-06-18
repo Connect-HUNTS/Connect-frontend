@@ -1,0 +1,107 @@
+.wrapper {
+  width: 59.556vw;
+  padding: 0.937vw;
+
+  display: flex;
+  gap: 1.581vw;
+
+  border-radius: 1.354vw;
+
+  margin-bottom: 7.077vh;
+
+  background: rgba(30, 30, 30, 0.5);
+
+  box-shadow: 0 0.505vh 2.343vw 0 rgba(0, 0, 0, 0.25);
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.769vh;
+}
+
+.profileImage {
+  width: 17.361vw;
+  height: auto;
+}
+
+.copyIcon {
+  width: 1.769vh;
+}
+
+.website {
+  display: flex;
+  align-items: center;
+
+  gap: 0.417vw;
+
+  font-family: NeueMachina-Regular, serif;
+  font-size: 1.769vh;
+  font-weight: 400;
+  line-height: 1.769vh;
+  text-align: left;
+}
+
+.btn {
+  width: 100%;
+
+  padding: 1.516vh 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.469vw;
+
+  font-family: NeueMachina-Regular, serif;
+  font-size: 1.769vh;
+  font-weight: 500;
+  line-height: 1.769vh;
+  text-align: left;
+
+  border-radius: 1.113vw;
+
+  svg {
+    width: 0.644vw;
+    height: 0.644vw;
+  }
+}
+
+.messageBtn {
+  background: linear-gradient(96.46deg, #4131FF -14.79%, #BC88FF 71.68%);
+}
+
+.meetingBtn {
+  background: linear-gradient(96.46deg, #6631FF -14.79%, #FD9800 71.68%);
+}
+
+.right {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.769vh;
+}
+
+.title {
+  padding-left: 0.937vw;
+  margin-bottom: 1.769vh;
+
+  font-family: NeueMachina-Regular, serif;
+  font-size: 2.78vh;
+  font-weight: 500;
+  line-height: 2.78vh;
+  text-align: left;
+}
+
+.description {
+  min-height: 9.099vh;
+
+  font-family: NeueMachina-Ultralight, serif;
+  font-size: 1.264vh;
+  font-weight: 300;
+  line-height: 1.264vh;
+  text-align: left;
+}

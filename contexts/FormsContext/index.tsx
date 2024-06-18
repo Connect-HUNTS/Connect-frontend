@@ -8,37 +8,26 @@ import React, {
   useState,
 } from "react";
 
+import { InvestorType } from "types/InvestorType";
+import { StartupType } from "types/StartupType";
+import { PartnersType } from "types/PartnerType";
+
 type FormType = "investors" | "startups" | "projects";
 
-interface InvestorItem {
-  investorName: string;
-  amountInvested: number;
-}
-
-interface StartupItem {
-  startupName: string;
-  valuation: number;
-}
-
-interface ProjectItem {
-  projectName: string;
-  deadline: Date;
-}
-
 type FilterType<T extends FormType> = T extends "investors"
-  ? InvestorItem
+  ? InvestorType
   : T extends "startups"
-    ? StartupItem
+    ? StartupType
     : T extends "projects"
-      ? ProjectItem
+      ? PartnersType
       : never;
 
 type ItemsType<T extends FormType> = T extends "investors"
-  ? InvestorItem[]
+  ? InvestorType[]
   : T extends "startups"
-    ? StartupItem[]
+    ? StartupType[]
     : T extends "projects"
-      ? ProjectItem[]
+      ? PartnersType[]
       : never;
 
 interface FormsContextType<T extends FormType> {

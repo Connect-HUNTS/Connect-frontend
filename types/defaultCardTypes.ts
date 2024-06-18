@@ -10,8 +10,4 @@ export interface defaultCardTypes {
   type: string[];
   keyCases?: string[];
   backgroundColors?: [string, string, string, string, string];
-  cardItems: {
-    raiseType: string;
-    fundingRound: string;
-  };
 }

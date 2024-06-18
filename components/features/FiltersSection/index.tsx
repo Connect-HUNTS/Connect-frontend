@@ -1,11 +1,11 @@
 import s from "./FiltersSection.module.scss";
+
 import React from "react";
 
 import Image from "next/image";
 
 import filterIcon from "public/icons/filter-icon.svg";
-
-import Accordion from "components/widgets/Accordion";
+import Accordion from "components/shared/Accordion";
 
 const FiltersSection = () => {
   return (

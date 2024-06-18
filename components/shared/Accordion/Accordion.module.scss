@@ -1,0 +1,57 @@
+.item {
+  background: #1e1e1e;
+  margin-bottom: 0.819vw;
+  padding: 1.516vh 0;
+
+  &.open {
+    padding: 0;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.351vw;
+  cursor: pointer;
+  padding: 0 0.702vw;
+  background: #1e1e1e;
+
+  &.open {
+    padding-top: 1.516vh;
+    background: #292929;
+    border-radius: 0.702vw 0.702vw 0 0;
+  }
+
+  h2 {
+    font-size: 1.769vh;
+    font-weight: 400;
+    letter-spacing: 0.0694vw;
+    font-family: NeueMachina-Regular, serif;
+    color: #fff;
+  }
+
+  .arrow {
+    transition: transform 0.3s ease;
+    width: 0.82vw;
+    height: 0.82vw;
+  }
+}
+
+.hide {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.content {
+  background: #292929;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+
+  &.show {
+    padding: 0.936vw 0.702vw;
+    border-radius: 0 0 0.702vw 0.702vw;
+  }
+}

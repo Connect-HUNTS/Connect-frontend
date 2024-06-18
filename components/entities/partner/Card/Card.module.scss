@@ -1,0 +1,58 @@
+.text {
+  font-family: NeueMachina-Regular, serif;
+  font-size: 1.769vh;
+  font-weight: 400;
+  line-height: 1.769vh;
+  text-align: left;
+}
+
+.upload {
+  transform: rotateX(180deg);
+}
+
+.wrapper {
+  display: flex;
+  gap: 0.82vw;
+}
+
+.list {
+  height: 100%;
+
+  font-size: 1.438vh;
+
+  list-style-position: inside;
+
+
+  li {
+    &::before {
+      content: "●";
+    }
+
+    margin-bottom: 1.438vh;
+    font-family: NeueMachina-Ultralight, sans-serif;
+    font-weight: 300;
+    display: flex;
+    gap: 0.651vw;
+  }
+}
+
+
+.text {
+
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.82vw;
+
+  flex: 1;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.82vw;
+
+  flex: 1;
+}
