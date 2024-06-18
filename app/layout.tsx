@@ -12,7 +12,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <SessionProvider>{children}</SessionProvider>
+        <SessionProvider>
+          {children}
+          <div className="portal-root"></div>
+        </SessionProvider>
       </body>
     </html>
   );
