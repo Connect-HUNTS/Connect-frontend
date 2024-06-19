@@ -1,6 +1,10 @@
+"use client";
+
 import s from "./Modal.module.scss";
 
 import { FC, ReactNode } from "react";
+
+import { useRouter } from "next/navigation";
 
 import { useFormState } from "react-dom";
 import { googleAuthenticate } from "lib/actions";
@@ -17,8 +21,6 @@ import SignInScreen from "../SignInScreen";
 
 interface DefaultModal {
   screen: Screen;
-  onClose: () => void;
-  changeScreen: (screen: Screen) => void;
 }
 
 interface ContentWrapper {
@@ -65,7 +67,17 @@ const ContentWrapper: FC<ContentWrapper> = ({
   );
 };
 
-const Modal: FC<DefaultModal> = ({ screen, changeScreen, onClose }) => {
+const Modal: FC<DefaultModal> = ({ screen }) => {
+  const router = useRouter();
+
+  const onClose = () => {
+    router.back();
+  };
+
+  const changeScreen = () => {
+    router.push(screen === "sign-in" ? "/sign-up" : "/sign-in");
+  };
+
   return (
     <div className={s.wrapper}>
       <div className={s.modal}>
@@ -76,10 +88,8 @@ const Modal: FC<DefaultModal> = ({ screen, changeScreen, onClose }) => {
             prescription={
               <>
                 Welcome back, log in or <br />
-                <span onClick={() => changeScreen("sign-up")}>
-                  create a new account
-                </span>{" "}
-                for free
+                <span onClick={changeScreen}>create a new account</span> for
+                free
               </>
             }
             onClose={onClose}

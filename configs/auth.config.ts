@@ -1,7 +1,7 @@
 import type { NextAuthConfig } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
-const privateRoutes = [
+export const privateRoutes = [
   "/investors",
   "/startups",
   "/partners",
@@ -14,7 +14,9 @@ const privateRoutes = [
 const baseUrl = "http://localhost:3000";
 
 export const authConfig = {
-  pages: {},
+  pages: {
+    signIn: "/sign-in",
+  },
   callbacks: {
     async authorized({ auth, request }) {
       const isLoggedIn = !!auth?.user;
@@ -23,9 +25,11 @@ export const authConfig = {
       const callbackUrl = nextUrl.searchParams.get("callbackUrl");
       const isOnPrivate = privateRoutes.includes(nextUrl.pathname);
 
-      if (isOnPrivate) {
-        return isLoggedIn;
-      } else if (isLoggedIn && callbackUrl) {
+      if (isOnPrivate && !isLoggedIn) {
+        return false;
+      }
+
+      if (isLoggedIn && callbackUrl) {
         return Response.redirect(new URL(callbackUrl));
       }
 
