@@ -1,0 +1,24 @@
+.wrapper {
+  display: flex;
+
+  border-radius: 0.703vw 0.703vw 0 0;
+
+  overflow: hidden;
+}
+
+.btn {
+  padding: 2.148vh 0;
+
+  background: rgba(17, 17, 17, 1);
+  flex: 1;
+
+  font-size: 2.275vh;
+  font-family: NeueMachina-Regular, serif;
+  font-weight: 400;
+  line-height: 2.275vh;
+  text-align: center;
+}
+
+.active {
+  background: rgba(24, 24, 24, 1);
+}

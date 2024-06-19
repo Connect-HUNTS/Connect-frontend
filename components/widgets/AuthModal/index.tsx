@@ -7,10 +7,18 @@ import { useState } from "react";
 import { Screen } from "./types";
 
 import Portal from "components/shared/Portal";
-import DefaultModal from "./ui/DefaultModal";
+import Modal from "./ui/Modal";
 
 const AuthModal = () => {
-  const [screen, setScreen] = useState<Screen>();
+  const [screen, setScreen] = useState<Screen | null>(null);
+
+  const onCLose = () => {
+    setScreen(null);
+  };
+
+  const changeScreen = (screen: Screen) => {
+    setScreen(screen);
+  };
 
   return (
     <>
@@ -22,7 +30,11 @@ const AuthModal = () => {
       </button>
       {screen && (
         <Portal>
-          <DefaultModal screen={screen} />
+          <Modal
+            screen={screen}
+            onClose={onCLose}
+            changeScreen={changeScreen}
+          />
         </Portal>
       )}
     </>

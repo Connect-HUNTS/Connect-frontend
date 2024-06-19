@@ -14,23 +14,19 @@ const privateRoutes = [
 const baseUrl = "http://localhost:3000";
 
 export const authConfig = {
-  pages: {
-    signIn: "/sign-in",
-  },
+  pages: {},
   callbacks: {
     async authorized({ auth, request }) {
       const isLoggedIn = !!auth?.user;
       const nextUrl = new URL(request.nextUrl);
 
-      const callbackUrl = new URL(
-        nextUrl.searchParams.get("callbackUrl") || baseUrl,
-      );
+      const callbackUrl = nextUrl.searchParams.get("callbackUrl");
       const isOnPrivate = privateRoutes.includes(nextUrl.pathname);
 
       if (isOnPrivate) {
         return isLoggedIn;
-      } else if (isLoggedIn && nextUrl.pathname === "/sign-in") {
-        return Response.redirect(callbackUrl);
+      } else if (isLoggedIn && callbackUrl) {
+        return Response.redirect(new URL(callbackUrl));
       }
 
       return true;

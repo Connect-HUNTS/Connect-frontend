@@ -1,0 +1,98 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+  background-color: rgba(0, 0, 0, 0.4);
+
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  width: 23.428vw;
+}
+
+.content {
+  padding: 0 0 9.099vh 0;
+  gap: 24px;
+  border-radius: 0 0 0.703vw 0.703vw;
+
+  background: rgba(24, 24, 24, 1);
+}
+
+.closeBtn {
+  padding: 2.78vh 1.347vw 3.412vh 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.oauthWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.oauthTitle {
+  font-size: 5.308vh;
+  font-family: NeueMachina-Regular, serif;
+  font-weight: 500;
+  line-height: 5.308vh;
+  text-align: left;
+
+  margin-bottom: 3.033vh;
+
+}
+
+.oauthPrescription {
+  font-family: NeueMachina-Regular, serif;
+  font-size: 1.516vh;
+  font-weight: 400;
+  line-height: 1.643vh;
+  text-align: center;
+
+  margin-bottom: 6.066vh;
+
+  span {
+    cursor: pointer;
+    color: rgba(0, 133, 255, 1);
+    text-decoration: underline;
+  }
+}
+
+.btn {
+  width: 15.111vw;
+
+  padding: 1.25vh 0.703vw;
+
+  display: flex;
+  align-items: center;
+  gap: 0.469vw;
+
+  border-radius: 22px;
+  border: 1px #FFFFFF solid;
+
+  margin-bottom: 3.033vh;
+
+  font-family: NeueMachina-Regular, serif;
+  font-size: 2.022vh;
+  font-weight: 400;
+  line-height: 2.022vh;
+  text-align: left;
+
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    background: #FFFFFF;
+    color: rgba(24, 24, 24, 1);
+  }
+}
