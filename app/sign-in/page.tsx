@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"
 
 export default function LoginForm() {
-  const router = useRouter();
+    const router = useRouter()
 
-  router.push("/sign-in");
+    router.push("/sign-in")
 
-  return <></>;
+    return <></>
 }

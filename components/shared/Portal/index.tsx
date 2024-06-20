@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import { FC, ReactNode } from "react";
-import { createPortal } from "react-dom";
+import { FC, ReactNode } from "react"
+import { createPortal } from "react-dom"
 
 interface PortalProps {
   children: ReactNode;
@@ -9,10 +9,10 @@ interface PortalProps {
 }
 
 const Portal: FC<PortalProps> = ({ children, containerId = "portal-root" }) => {
-  return createPortal(
-    children,
+    return createPortal(
+        children,
     document.getElementById(containerId) as HTMLElement,
-  );
-};
+    )
+}
 
-export default Portal;
+export default Portal

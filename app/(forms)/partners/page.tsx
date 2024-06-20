@@ -1,7 +1,7 @@
-import PartnersList from "components/features/PartnersList";
+import PartnersList from "components/features/PartnersList"
 
 const InvestorsPage = () => {
-  return <PartnersList />;
-};
+    return <PartnersList />
+}
 
-export default InvestorsPage;
+export default InvestorsPage

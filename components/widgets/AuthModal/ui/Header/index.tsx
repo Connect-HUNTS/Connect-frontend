@@ -1,8 +1,8 @@
-import s from "./Header.module.scss";
+import s from "./Header.module.scss"
 
-import { FC } from "react";
+import { FC } from "react"
 
-import { Screen } from "../../types";
+import { Screen } from "../../types"
 
 interface Header {
   screen: Screen;
@@ -10,22 +10,22 @@ interface Header {
 }
 
 const Header: FC<Header> = ({ screen, changeScreen }) => {
-  return (
-    <div className={s.wrapper}>
-      <button
-        className={[s.btn, screen === "sign-in" ? s.active : ""].join(" ")}
-        onClick={() => changeScreen("sign-in")}
-      >
+    return (
+        <div className={s.wrapper}>
+            <button
+                className={[s.btn, screen === "sign-in" ? s.active : ""].join(" ")}
+                onClick={() => changeScreen("sign-in")}
+            >
         Log In
-      </button>
-      <button
-        className={[s.btn, screen === "sign-up" ? s.active : ""].join(" ")}
-        onClick={() => changeScreen("sign-up")}
-      >
+            </button>
+            <button
+                className={[s.btn, screen === "sign-up" ? s.active : ""].join(" ")}
+                onClick={() => changeScreen("sign-up")}
+            >
         Sign Up
-      </button>
-    </div>
-  );
-};
+            </button>
+        </div>
+    )
+}
 
-export default Header;
+export default Header

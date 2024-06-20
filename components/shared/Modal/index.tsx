@@ -1,7 +1,7 @@
-import s from "./Modal.module.scss";
+import s from "./Modal.module.scss"
 
-import { FC, ReactNode } from "react";
-import Portal from "components/shared/Portal";
+import { FC, ReactNode } from "react"
+import Portal from "components/shared/Portal"
 
 interface ModalProps {
   isOpen: boolean;
@@ -10,20 +10,20 @@ interface ModalProps {
 }
 
 const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
-  if (!isOpen) return null;
+    if (!isOpen) return null
 
-  return (
-    <Portal>
-      <div className={s.modalOverlay} onClick={onClose}>
-        <div className={s.modalContent} onClick={(e) => e.stopPropagation()}>
-          <button className={s.modalClose} onClick={onClose}>
+    return (
+        <Portal>
+            <div className={s.modalOverlay} onClick={onClose}>
+                <div className={s.modalContent} onClick={(e) => e.stopPropagation()}>
+                    <button className={s.modalClose} onClick={onClose}>
             &times;
-          </button>
-          {children}
-        </div>
-      </div>
-    </Portal>
-  );
-};
+                    </button>
+                    {children}
+                </div>
+            </div>
+        </Portal>
+    )
+}
 
-export default Modal;
+export default Modal

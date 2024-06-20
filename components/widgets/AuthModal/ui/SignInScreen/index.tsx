@@ -1,7 +1,7 @@
-import s from "./SignInScreen.module.scss";
+import s from "./SignInScreen.module.scss"
 
 const SignInScreen = () => {
-  return <div className={s.wrapper}></div>;
-};
+    return <div className={s.wrapper}></div>
+}
 
-export default SignInScreen;
+export default SignInScreen

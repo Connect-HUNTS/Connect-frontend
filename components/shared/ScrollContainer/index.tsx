@@ -1,36 +1,36 @@
-"use client";
+"use client"
 
-import s from "./ScrollContainer.module.scss";
+import s from "./ScrollContainer.module.scss"
 
-import { FC, ReactNode, useEffect, useRef } from "react";
+import { FC, ReactNode, useEffect, useRef } from "react"
 
 interface ScrollableContainerProps {
   children: ReactNode;
 }
 
 const ScrollContainer: FC<ScrollableContainerProps> = ({ children }) => {
-  const sectionRef = useRef<HTMLDivElement>(null);
+    const sectionRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const handleWindowScroll = (event: WheelEvent) => {
-      if (sectionRef.current) {
-        event.preventDefault();
-        sectionRef.current.scrollTop += event.deltaY;
-      }
-    };
+    useEffect(() => {
+        const handleWindowScroll = (event: WheelEvent) => {
+            if (sectionRef.current) {
+                event.preventDefault()
+                sectionRef.current.scrollTop += event.deltaY
+            }
+        }
 
-    window.addEventListener("wheel", handleWindowScroll, { passive: false });
+        window.addEventListener("wheel", handleWindowScroll, { passive: false })
 
-    return () => {
-      window.removeEventListener("wheel", handleWindowScroll);
-    };
-  }, []);
+        return () => {
+            window.removeEventListener("wheel", handleWindowScroll)
+        }
+    }, [])
 
-  return (
-    <div className={s.scrollableSection} ref={sectionRef}>
-      {children}
-    </div>
-  );
-};
+    return (
+        <div className={s.scrollableSection} ref={sectionRef}>
+            {children}
+        </div>
+    )
+}
 
-export default ScrollContainer;
+export default ScrollContainer

@@ -1,7 +1,7 @@
-import StartupsList from "components/features/StartupsList";
+import StartupsList from "components/features/StartupsList"
 
 const StartUpsPage = () => {
-  return <StartupsList />;
-};
+    return <StartupsList />
+}
 
-export default StartUpsPage;
+export default StartUpsPage

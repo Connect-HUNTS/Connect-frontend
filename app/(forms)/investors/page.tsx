@@ -1,9 +1,9 @@
 // import Loading from "components/shared/Loading";
 
-import Investors from "components/features/InvestorsList";
+import Investors from "components/features/InvestorsList"
 
 const InvestorsPage = () => {
-  return <Investors />;
-};
+    return <Investors />
+}
 
-export default InvestorsPage;
+export default InvestorsPage

@@ -1,19 +1,19 @@
-import s from "./AuthModal.module.scss";
-import { useRouter } from "next/navigation";
+import s from "./AuthModal.module.scss"
+import { useRouter } from "next/navigation"
 
 const AuthModal = () => {
-  const router = useRouter();
+    const router = useRouter()
 
-  return (
-    <>
-      <button className={s.navButton} onClick={() => router.push("/sign-in")}>
+    return (
+        <>
+            <button className={s.navButton} onClick={() => router.push("/sign-in")}>
         Log In
-      </button>
-      <button className={s.navButton} onClick={() => router.push("/sign-up")}>
+            </button>
+            <button className={s.navButton} onClick={() => router.push("/sign-up")}>
         Sign Up
-      </button>
-    </>
-  );
-};
+            </button>
+        </>
+    )
+}
 
-export default AuthModal;
+export default AuthModal
