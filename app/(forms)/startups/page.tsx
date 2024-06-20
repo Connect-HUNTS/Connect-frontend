@@ -1,18 +1,7 @@
-"use client";
-
-import Loading from "components/shared/Loading";
-
-import dynamic from "next/dynamic";
-
-const DynamicStartupsList = dynamic(
-  () => import("components/features/StartupsList"),
-  {
-    loading: () => <Loading />,
-  },
-);
+import StartupsList from "components/features/StartupsList";
 
 const StartUpsPage = () => {
-  return <DynamicStartupsList />;
+  return <StartupsList />;
 };
 
 export default StartUpsPage;

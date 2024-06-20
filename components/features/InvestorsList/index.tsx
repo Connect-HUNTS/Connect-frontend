@@ -18,6 +18,7 @@ const getInvestors = async (): Promise<InvestorType[]> => {
         },
       },
     );
+
     return response.data;
   } catch (error) {
     throw error;
@@ -29,7 +30,7 @@ const Investors = async () => {
 
   return (
     <ScrollContainer>
-      {investors.map((investor: any) => (
+      {investors.map((investor: InvestorType) => (
         <Card investor={investor} key={investor.id} />
       ))}
     </ScrollContainer>

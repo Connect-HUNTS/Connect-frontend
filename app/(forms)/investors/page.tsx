@@ -1,18 +1,9 @@
-"use client";
+// import Loading from "components/shared/Loading";
 
-import Loading from "components/shared/Loading";
-
-import dynamic from "next/dynamic";
-
-const DynamicInvestorsList = dynamic(
-  () => import("components/features/InvestorsList"),
-  {
-    loading: () => <Loading />,
-  },
-);
+import Investors from "components/features/InvestorsList";
 
 const InvestorsPage = () => {
-  return <DynamicInvestorsList />;
+  return <Investors />;
 };
 
 export default InvestorsPage;

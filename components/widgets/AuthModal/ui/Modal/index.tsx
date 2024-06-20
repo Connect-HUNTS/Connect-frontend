@@ -9,11 +9,11 @@ import { useRouter } from "next/navigation";
 import { useFormState } from "react-dom";
 import { googleAuthenticate } from "lib/actions";
 
-import { Screen } from "../../types";
-
+import { Screen } from "../../types"; // don't change to root dir path, it is local type
 import CloseSVG from "components/shared/icons/CloseSVG";
 import GoogleSVG from "components/shared/icons/GoogleSVG";
-import TelegramSVG from "components/shared/icons/TelegramSVG";
+
+import TelegramAuthButton from "components/features/TelegramAuthButton";
 
 import Header from "../Header";
 import SignUpScreen from "../SignUpScreen";
@@ -57,10 +57,7 @@ const ContentWrapper: FC<ContentWrapper> = ({
             Continue with Google
           </button>
         </form>
-        <button className={s.btn}>
-          <TelegramSVG />
-          Continue with Telegram
-        </button>
+        <TelegramAuthButton className={s.btn} />
       </div>
       {children}
     </div>

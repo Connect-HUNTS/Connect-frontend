@@ -25,7 +25,6 @@ interface DefaultCardI {
 }
 
 const DefaultCard: FC<DefaultCardI> = ({ entity, children }) => {
-  console.log(entity);
   const copyLink = async (e: MouseEvent<SVGElement>, link: string) => {
     e.preventDefault();
     await copyToClipboard(link);

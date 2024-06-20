@@ -1,3 +1,5 @@
+"use client";
+
 import s from "./Card.module.scss";
 
 import { FC } from "react";
