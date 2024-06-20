@@ -9,4 +9,6 @@ export interface DefaultEntityType {
   type: string[];
   description: string;
   profileImage: string;
+  telegram: string;
+  linkedin: string;
 }

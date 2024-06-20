@@ -1,11 +1,5 @@
-"use client"
-
-import { useRouter } from "next/navigation"
+import Modal from "components/widgets/AuthModal/ui/Modal"
 
 export default function LoginForm() {
-    const router = useRouter()
-
-    router.push("/sign-in")
-
-    return <></>
+    return <Modal screen="sign-in" hideCloseBtn />
 }
