@@ -1,18 +1,11 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
 
-const SignUpPage = () => {
-  const { status } = useSession();
-
+export default function RegisterForm() {
   const router = useRouter();
 
-  if (status === "authenticated") {
-    return router.push("/investors");
-  }
+  router.push("/sign-up");
 
-  return <>{status}</>;
-};
-
-export default SignUpPage;
+  return <></>;
+}

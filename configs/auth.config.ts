@@ -17,28 +17,23 @@ export const authConfig = {
     signIn: "/sign-in",
   },
   callbacks: {
-    async redirect({ url, baseUrl }) {
-      if (url.startsWith("/")) return `${baseUrl}${url}`;
-      else if (new URL(url).origin === baseUrl) return url;
-      return baseUrl;
+    async authorized({ auth, request }) {
+      const isLoggedIn = !!auth?.user;
+      const nextUrl = new URL(request.nextUrl);
+
+      const callbackUrl = nextUrl.searchParams.get("callbackUrl");
+      const isOnPrivate = privateRoutes.includes(nextUrl.pathname);
+
+      if (isOnPrivate && !isLoggedIn) {
+        return false;
+      }
+
+      if (isLoggedIn && callbackUrl) {
+        return Response.redirect(new URL(callbackUrl));
+      }
+
+      return true;
     },
-    // async authorized({ auth, request }) {
-    //   const isLoggedIn = !!auth?.user;
-    //   const nextUrl = new URL(request.nextUrl);
-    //
-    //   const callbackUrl = nextUrl.searchParams.get("callbackUrl");
-    //   const isOnPrivate = privateRoutes.includes(nextUrl.pathname);
-    //
-    //   if (isOnPrivate && !isLoggedIn) {
-    //     return false;
-    //   }
-    //
-    //   if (isLoggedIn && callbackUrl) {
-    //     return Response.redirect(new URL(callbackUrl));
-    //   }
-    //
-    //   return true;
-    // },
   },
   providers: [],
 } satisfies NextAuthConfig;

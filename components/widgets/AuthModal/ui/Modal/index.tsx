@@ -21,12 +21,14 @@ import SignInScreen from "../SignInScreen";
 
 interface DefaultModal {
   screen: Screen;
+  hideCloseBtn?: boolean;
 }
 
 interface ContentWrapper {
   onClose: () => void;
   title: string;
   prescription: ReactNode;
+  hideCloseBtn?: boolean;
   children: ReactNode;
 }
 
@@ -34,6 +36,7 @@ const ContentWrapper: FC<ContentWrapper> = ({
   onClose,
   title,
   prescription,
+  hideCloseBtn = false,
   children,
 }) => {
   const [errorMsgGoogle, dispatchGoogle] = useFormState(
@@ -44,9 +47,11 @@ const ContentWrapper: FC<ContentWrapper> = ({
   return (
     <div className={s.content}>
       <div className={s.closeBtn}>
-        <button onClick={onClose}>
-          <CloseSVG />
-        </button>
+        {!hideCloseBtn && (
+          <button onClick={onClose}>
+            <CloseSVG />
+          </button>
+        )}
       </div>
       <div className={s.oauthWrapper}>
         <h2 className={s.oauthTitle}>{title}</h2>
@@ -64,7 +69,7 @@ const ContentWrapper: FC<ContentWrapper> = ({
   );
 };
 
-const Modal: FC<DefaultModal> = ({ screen }) => {
+const Modal: FC<DefaultModal> = ({ screen, hideCloseBtn = false }) => {
   const router = useRouter();
 
   const onClose = () => {
@@ -82,6 +87,7 @@ const Modal: FC<DefaultModal> = ({ screen }) => {
         {screen === "sign-in" ? (
           <ContentWrapper
             title="Log In"
+            hideCloseBtn={hideCloseBtn}
             prescription={
               <>
                 Welcome back, log in or <br />
@@ -96,6 +102,7 @@ const Modal: FC<DefaultModal> = ({ screen }) => {
         ) : (
           <ContentWrapper
             title="Sign Up"
+            hideCloseBtn={hideCloseBtn}
             prescription={
               <>
                 We're almost done, we just need to know <br />

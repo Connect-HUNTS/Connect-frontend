@@ -1,7 +1,8 @@
 import NextAuth from "next-auth";
-import { authConfig } from "./configs/auth.config";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
+
+import { authConfig } from "./configs/auth.config";
 import { AuthDataValidator } from "@telegram-auth/server";
 
 export const {
@@ -24,8 +25,6 @@ export const {
         const validator = new AuthDataValidator({
           botToken: `${process.env.BOT_TOKEN}`,
         });
-
-        console.log(req);
 
         const searchParams = new URL(req.url).searchParams;
 

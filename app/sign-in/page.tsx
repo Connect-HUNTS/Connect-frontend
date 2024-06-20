@@ -1,19 +1,11 @@
 "use client";
 
-import { useFormState } from "react-dom";
-import { googleAuthenticate } from "@/lib/actions";
+import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
-  const [errorMsgGoogle, dispatchGoogle] = useFormState(
-    googleAuthenticate,
-    undefined,
-  );
+  const router = useRouter();
 
-  return (
-    <div>
-      <form action={dispatchGoogle}>
-        <button>Sign in with Google</button>
-      </form>
-    </div>
-  );
+  router.push("/sign-in");
+
+  return <></>;
 }
