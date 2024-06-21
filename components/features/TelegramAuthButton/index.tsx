@@ -15,7 +15,7 @@ interface TelegramAuthButton {
 const TelegramAuthButton: FC<TelegramAuthButton> = ({ className = "" }) => {
     const handleClickEvent = () => {
         window.Telegram.Login.auth(
-            { bot_id: "7289597921", request_access: true },
+            { bot_id: "7342389930", request_access: true },
             (data) => {
                 if (data === false) {
                     return "telegram log in failed"
