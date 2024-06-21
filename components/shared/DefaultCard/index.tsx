@@ -1,10 +1,8 @@
 import s from "./DefaultCard.module.scss"
 
-import { FC, MouseEvent, ReactNode } from "react"
+import { FC, ReactNode } from "react"
 
 import { DefaultEntityType } from "@/types/DefaultEntityType"
-
-import { copyToClipboard } from "@/utils/copyToClipboard"
 
 import { AiOutlineLink, AiOutlineVideoCamera } from "react-icons/ai"
 import { IoMailOutline } from "react-icons/io5"
@@ -12,13 +10,11 @@ import { PiPencilSimpleLineBold } from "react-icons/pi"
 import { BiMessageDetail } from "react-icons/bi"
 import { HiOutlineRectangleStack } from "react-icons/hi2"
 
-import { FaRegCopy } from "react-icons/fa6"
-
 import Container from "components/shared/Container"
 
 import Types from "./ui/Types"
 import Contacts from "./ui/Contacts"
-import Image from "next/image"
+import CopyToClipBoard from "../CopyToClipboard"
 
 interface DefaultCardI {
   entity: DefaultEntityType;
@@ -26,17 +22,16 @@ interface DefaultCardI {
 }
 
 const DefaultCard: FC<DefaultCardI> = ({ entity, children }) => {
-    const copyLink = async (e: MouseEvent<SVGElement>, link: string) => {
-        e.preventDefault()
-        await copyToClipboard(link)
-    }
-
     return (
         <div className={s.wrapper}>
             <div className={s.left}>
-                <Image
+                <img
                     className={s.profileImage}
-                    src={entity.profileImage ?? "/images/cardImage.png"}
+                    src={
+                        entity.profileImage
+                            ? `api/image/?url=${entity.profileImage}`
+                            : "/images/cardImage.png"
+                    }
                     alt="Profile Picture"
                 />
                 <Container
@@ -47,10 +42,6 @@ const DefaultCard: FC<DefaultCardI> = ({ entity, children }) => {
                     {entity.website ? (
                         <a href={entity.website} target="_blank" className={s.website}>
                             {entity.website}
-                            <FaRegCopy
-                                className={s.copyIcon}
-                                onClick={(e) => copyLink(e, entity.website)}
-                            />
                         </a>
                     ) : (
                         <p className={s.website}>Empty</p>
@@ -64,10 +55,7 @@ const DefaultCard: FC<DefaultCardI> = ({ entity, children }) => {
                     {entity.email ? (
                         <a href={`mailto:${entity.email}`} className={s.website}>
                             {entity.email}
-                            <FaRegCopy
-                                className={s.copyIcon}
-                                onClick={(e) => copyLink(e, entity.email as string)}
-                            />
+                            <CopyToClipBoard className={s.copyIcon} text={entity.website} />
                         </a>
                     ) : (
                         <p className={s.website}>Empty</p>

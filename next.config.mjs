@@ -1,7 +1,6 @@
 // next.config.mjs
 const nextConfig = {
     images: {
-        domains: ["t.me", "lh3.googleusercontent.com"],
         remotePatterns: [
             {
                 protocol: "https",
@@ -14,6 +13,12 @@ const nextConfig = {
                 hostname: "lh3.googleusercontent.com",
                 port: "",
                 pathname: "/a/**",
+            },
+            {
+                protocol: "https",
+                hostname: "connector.ai",
+                port: "",
+                pathname: "/**",
             },
         ],
     },
