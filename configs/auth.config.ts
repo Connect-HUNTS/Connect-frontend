@@ -10,7 +10,7 @@ export const privateRoutes = [
     "/messages",
 ]
 
-const baseUrl = "https://crayfish-inspired-fly.ngrok-free.app"
+const baseUrl = process.env.NEXTAUTH_URL
 
 export const authConfig = {
     trustHost: true,
@@ -25,8 +25,8 @@ export const authConfig = {
             const callbackUrl = nextUrl.searchParams.get("callbackUrl")
             const isOnPrivate = privateRoutes.includes(nextUrl.pathname)
 
-            if (isOnPrivate && !isLoggedIn) {
-                return false
+            if (isOnPrivate) {
+                return isLoggedIn
             }
 
             if (isLoggedIn && callbackUrl) {

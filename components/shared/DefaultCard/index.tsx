@@ -29,7 +29,7 @@ const DefaultCard: FC<DefaultCardI> = ({ entity, children }) => {
                     className={s.profileImage}
                     src={
                         entity.profileImage
-                            ? `api/image/?url=${entity.profileImage}`
+                            ? `https://connector.fund/${entity.profileImage}`
                             : "/images/cardImage.png"
                     }
                     alt="Profile Picture"

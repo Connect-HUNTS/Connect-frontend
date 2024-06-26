@@ -8,7 +8,7 @@ export async function googleAuthenticate(
     formData: FormData,
 ) {
     try {
-        await signIn("google")
+        await signIn("google", { redirectTo: "/investors" })
     } catch (error) {
         if (error instanceof AuthError) {
             return "google log in failed"

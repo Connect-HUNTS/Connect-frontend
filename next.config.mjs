@@ -16,7 +16,7 @@ const nextConfig = {
             },
             {
                 protocol: "https",
-                hostname: "connector.ai",
+                hostname: "connector.fund",
                 port: "",
                 pathname: "/**",
             },

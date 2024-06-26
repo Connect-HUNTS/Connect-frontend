@@ -13,7 +13,7 @@ const token =
 const getStartups = async (): Promise<StartupType[]> => {
     try {
         const response = await axios.get(
-            "http://104.207.130.38:3000/api/users/startups?limit=10&offset=0&sortBy=name&sortOrder=asc",
+            "http://104.207.130.38:3000/api-backend/users/startups?limit=10&offset=0&sortBy=name&sortOrder=asc",
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
